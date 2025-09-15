@@ -24,7 +24,7 @@ export default function SignUpPage() {
                         <legend className="fieldset-legend">First Name</legend>
                         <label className="input input-lg w-full validator">
                             <span className="icon-[lucide--circle-user-round] size-5"></span>
-                            <input type="text" required placeholder="first name" name="first_name" defaultValue="John" disabled={pending} />
+                            <input type="text" required placeholder="first name" name="first_name" disabled={pending} />
                         </label>
                         <p className="validator-hint hidden">First name is required</p>
                     </fieldset>
@@ -32,7 +32,7 @@ export default function SignUpPage() {
                         <legend className="fieldset-legend">Last Name</legend>
                         <label className="input input-lg w-full">
                             <span className="icon-[lucide--circle-user-round] size-5"></span>
-                            <input type="text" placeholder="last name" name="last_name" defaultValue="Doe" disabled={pending} />
+                            <input type="text" placeholder="last name" name="last_name" disabled={pending} />
                             <span className="badge badge-neutral badge-sm">Optional</span>
                         </label>
                     </fieldset>
@@ -40,7 +40,7 @@ export default function SignUpPage() {
                         <legend className="fieldset-legend">Email Address</legend>
                         <label className="input input-lg w-full validator">
                             <span className="icon-[lucide--mail] size-5"></span>
-                            <input type="email" required placeholder="email address" name="email" disabled={pending} defaultValue={`john.doe_${Math.random().toString(36).substring(2, 5)}@example.com`} />
+                            <input type="email" required placeholder="email address" name="email" disabled={pending} />
                         </label>
                         <p className="validator-hint hidden">Enter valid email address</p>
                     </fieldset>
@@ -48,7 +48,7 @@ export default function SignUpPage() {
                         <legend className="fieldset-legend">Password</legend>
                         <label className="input input-lg w-full validator">
                             <span className="icon-[lucide--key-round] size-5"></span>
-                            <PasswordInput required pattern=".{12,}" title="Must be alteast 12 characters long" name="password" disabled={pending} defaultValue="Password123456789" />
+                            <PasswordInput required pattern=".{12,}" title="Must be alteast 12 characters long" name="password" disabled={pending} />
                         </label>
                         <p className="label">
                             Must be alteast 12 characters long
