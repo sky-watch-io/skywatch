@@ -1,5 +1,6 @@
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth"
+import LogoutButton from "@/app/components/LogoutButton";
 
 export default async function DashboardPage() {
 
@@ -11,7 +12,7 @@ export default async function DashboardPage() {
         <div>
             <h1>Welcome {session?.user?.email}</h1>
             <div className="flex gap-2">
-                <button className="btn btn-sm btn-secondary">Logout</button>
+                <LogoutButton />
             </div>
         </div>
     )
