@@ -1,17 +1,5 @@
 {
   "$schema": "https://turborepo.com/schema.json",
-  "pipeline": {
-    "sky-watch#build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "env": [
-        "BETTER_AUTH_SECRET",
-        "BETTER_AUTH_URL",
-        "DATABASE_URL"
-      ]
-    }
-  },
   "ui": "tui",
   "tasks": {
     "build": {
@@ -25,6 +13,16 @@
       "outputs": [
         ".next/**",
         "!.next/cache/**"
+      ]
+    },
+    "sky-watch#build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "env": [
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "DATABASE_URL"
       ]
     },
     "lint": {
