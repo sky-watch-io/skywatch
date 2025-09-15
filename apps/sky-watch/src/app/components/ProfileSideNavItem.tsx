@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth"
 import { redirect } from "next/navigation";
+import { getGravatarUrl } from "@/lib/utils";
 
 export default async function ProfileSideNavItem() {
     const session = await auth.api.getSession({
@@ -13,33 +14,40 @@ export default async function ProfileSideNavItem() {
         });
         redirect('/sign-in')
     }
+    const userImage = session?.user.image ?? getGravatarUrl(session?.user.email);
     return (
         <div className="dropdown dropdown-right dropdown-end w-full">
-            <div tabIndex={0} role="button" className="flex items-center justify-between p-2 text-start cursor-pointer hover:bg-base-200">
-                <div className="flex gap-2 items-center">
-                    <div>
-                        <div className="avatar avatar-placeholder">
-                            <div className="bg-accent text-accent-content w-9 rounded-xl">
-                                <span className="text-2xl">{session?.user.name[0]}</span>
-                            </div>
+            <div tabIndex={0} role="button" className="flex items-center justify-between py-3 px-5 text-start cursor-pointer hover:bg-base-200">
+                <div className="flex gap-3 items-center">
+                    {userImage && (<div className="avatar">
+                        <div className="ring-accent ring-2 ring-offset-base-100 ring-offset-2 w-8 rounded-xl">
+                            <img src={userImage} />
                         </div>
-                    </div>
+                    </div>)}
+                    {!userImage && (<div className="avatar avatar-placeholder">
+                        <div className="ring-accent ring-2 ring-offset-base-100 ring-offset-2 w-8 rounded-xl bg-secondary text-secondary-content">
+                            <span className="text-2xl">{session?.user.name[0]}</span>
+                        </div>
+                    </div>)}
                     <div>
                         <div className="text-sm font-medium">{session?.user.name}</div>
                         <div className="text-xs">{session?.user.email}</div>
                     </div>
                 </div>
-                <span className="icon-[lucide--chevrons-up-down]"></span>
+                <span className="icon-[lucide--chevrons-up-down] size-5"></span>
             </div>
-            <ul tabIndex={0} className="dropdown-content menu z-1 w-80 p-2 border border-base-300 bg-base-100 rounded shadow-sm">
-                <div className="flex gap-2 items-center px-2 py-1">
-                    <div>
-                        <div className="avatar avatar-placeholder">
-                            <div className="bg-accent text-accent-content w-9 rounded-xl">
-                                <span className="text-2xl">{session?.user.name[0]}</span>
-                            </div>
+            <ul tabIndex={0} className="dropdown-content menu z-1 w-80 p-2 border border-base-200 bg-base-100 rounded-md shadow-sm ml-1 mb-1">
+                <div className="flex gap-3 items-center px-2 py-1">
+                    {userImage && (<div className="avatar">
+                        <div className="ring-accent ring-2 ring-offset-base-100 ring-offset-2 w-8 rounded-xl">
+                            <img src={userImage} />
                         </div>
-                    </div>
+                    </div>)}
+                    {!userImage && (<div className="avatar avatar-placeholder">
+                        <div className="ring-accent ring-2 ring-offset-base-100 ring-offset-2 w-8 rounded-xl bg-secondary text-secondary-content">
+                            <span className="text-2xl">{session?.user.name[0]}</span>
+                        </div>
+                    </div>)}
                     <div>
                         <div className="text-sm font-medium">{session?.user.name}</div>
                         <div className="text-xs">{session?.user.email}</div>
