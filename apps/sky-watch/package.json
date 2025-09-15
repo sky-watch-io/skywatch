@@ -10,6 +10,7 @@
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",
     "better-auth": "^1.3.7",
+    "clsx": "^2.1.1",
     "kysely": "^0.28.7",
     "next": "15.5.2",
     "react": "19.1.0",

@@ -1,20 +1,30 @@
+"use client"
 import Link from "next/link"
 import PasswordInput from "@/app/components/PasswordInput"
+import { signIn } from "@/app/actions/auth"
+import { useActionState } from "react"
 
 export default function SignInPage() {
+    const [state, signInAction, pending] = useActionState(signIn, undefined)
 
     return (
         <>
-
             <div className="flex flex-col gap-2">
                 <div className="font-semibold text-center text-lg md:text-xl">Sign In</div>
                 <div className="text-xs md:text-sm text-center">Enter your email below to sign in to your account</div>
-                <form className="flex flex-col">
+                {
+                    state?.message && !pending && (
+                        <div role="alert" className="alert alert-error alert-soft">
+                            <span>{state.message}</span>
+                        </div>
+                    )
+                }
+                <form className="flex flex-col" action={signInAction}>
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">Email Address</legend>
                         <label className="input input-lg w-full validator">
                             <span className="icon-[lucide--mail] size-5"></span>
-                            <input type="email" required placeholder="email address" />
+                            <input type="email" required placeholder="email address" name="email" disabled={pending} />
                         </label>
                         <p className="validator-hint hidden">Enter valid email address</p>
                     </fieldset>
@@ -22,13 +32,13 @@ export default function SignInPage() {
                         <legend className="fieldset-legend">Password</legend>
                         <label className="input input-lg w-full validator">
                             <span className="icon-[lucide--key-round] size-5"></span>
-                            <PasswordInput required />
+                            <PasswordInput required name="password" disabled={pending} />
                         </label>
                         <div className="flex justify-end">
                             <Link href="/forgot-password" className="link link-hover text-end">Forgot password ?</Link>
                         </div>
                     </fieldset>
-                    <button className="btn btn-lg btn-primary mt-2" type="submit">
+                    <button className="btn btn-lg btn-primary mt-2" type="submit" disabled={pending}>
                         <span className="icon-[lucide--log-in] size-5"></span>
                         Sign In
                     </button>

@@ -22,3 +22,22 @@ export const signUp = async (prevState: APIError | undefined, formData: FormData
     }
 
 }
+
+export const signIn = async (prevState: APIError | undefined, formData: FormData) => {
+    const { email, password } = Object.fromEntries(formData) as Record<string, string>
+    try {
+        await auth.api.signInEmail({
+            body: {
+                email: email,
+                password: password
+            }
+        })
+        redirect("/")
+    } catch (error) {
+        if (error instanceof APIError) {
+            return error
+        }
+        throw error;
+    }
+
+}
