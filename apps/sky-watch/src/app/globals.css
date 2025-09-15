@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: emerald --default, dim --prefersdark;
+}
+
+@plugin "@iconify/tailwind4";
+
+
+@theme inline {
+  --font-sans: var(--font-noto-sans);
+  --font-mono: var(--font-noto-sans-mono);
+  --font-audiowide: var(--font-audiowide);
+}
