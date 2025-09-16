@@ -17,7 +17,7 @@ export default function ProjectsSideNavItem() {
             </div>
             <ul
                 tabIndex={0}
-                className="menu dropdown-content z-1 w-11/12 p-2 border border-base-200 bg-base-100 rounded-md shadow-sm">
+                className="menu dropdown-content w-11/12 p-2 border border-base-300 bg-base-200 rounded-md shadow-sm">
                 <li>
                     <a className="py-3">
                         <div className="flex gap-2 items-center">

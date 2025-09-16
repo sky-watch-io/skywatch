@@ -36,7 +36,7 @@ export default async function ProfileSideNavItem() {
                 </div>
                 <span className="icon-[lucide--chevrons-up-down] size-5"></span>
             </div>
-            <ul tabIndex={0} className="dropdown-content menu z-1 w-11/12 p-2 border border-base-200 bg-base-100 rounded-md shadow-sm ml-1 mb-1">
+            <ul tabIndex={0} className="dropdown-content menu w-11/12 p-2 border border-base-300 bg-base-200 rounded-md shadow-sm mb-1">
                 <div className="flex gap-3 items-center px-2 py-1">
                     {userImage && (<div className="avatar">
                         <div className="ring-accent ring-2 ring-offset-base-100 ring-offset-2 w-8 rounded-xl">
