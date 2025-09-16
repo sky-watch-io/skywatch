@@ -46,7 +46,7 @@ export default function SideNav() {
                             </a>
                         </li>
                         <li>
-                            <details open>
+                            <details>
                                 <summary className="pr-4">
                                     <span className="icon-[lucide--circle-gauge] size-6"></span>
                                     <div>Performance Metrics</div>
@@ -54,7 +54,7 @@ export default function SideNav() {
                                 <ul className="space-y-2 mt-2">
                                     <li>
                                         <a>
-                                            <span className="icon-[lucide--hour-glass] size-4"></span>
+                                            <span className="icon-[lucide--hourglass] size-4"></span>
                                             Page load times
                                         </a>
                                     </li>
@@ -95,7 +95,7 @@ export default function SideNav() {
                             </a>
                         </li>
                         <li>
-                            <details open>
+                            <details>
                                 <summary className="pr-4">
                                     <span className="icon-[lucide--flask-round] size-6"></span>
                                     <div>Experimental</div>
