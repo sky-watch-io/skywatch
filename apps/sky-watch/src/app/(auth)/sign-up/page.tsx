@@ -3,6 +3,7 @@ import Link from "next/link"
 import PasswordInput from "@/app/components/PasswordInput"
 import { signUp } from "@/app/actions/auth"
 import { useActionState } from "react"
+import clsx from "clsx"
 
 export default function SignUpPage() {
     const [state, signUpAction, pending] = useActionState(signUp, undefined)
@@ -12,13 +13,20 @@ export default function SignUpPage() {
             <div className="flex flex-col gap-2">
                 <div className="font-semibold text-center text-lg md:text-xl">Sign Up</div>
                 <div className="text-xs md:text-sm text-center">Enter your details below to create an account</div>
-                {
-                    state?.message && !pending && (
-                        <div role="alert" className="alert alert-error alert-soft">
-                            <span>{state.message}</span>
-                        </div>
-                    )
-                }
+                {state?.message && !pending && (
+                    <div
+                        role="alert"
+                        className={clsx(
+                            "alert alert-soft",
+                            {
+                                "alert-error": state?.error,
+                                "alert-success": state?.success,
+                            }
+                        )}
+                    >
+                        <span>{state.message}</span>
+                    </div>
+                )}
                 <form className="flex flex-col" action={signUpAction}>
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">First Name</legend>
