@@ -73,8 +73,8 @@ const data01 = [
 
 export default function DashboardPage() {
     return (
-        <div className="grid gap-6 grid-cols-3">
-            <div className="col-span-3">
+        <div className="grid gap-6 lg:grid-cols-3">
+            <div className="hidden lg:col-span-3 lg:block">
                 <div className="tabs tabs-lift h-auto">
                     <label className="tab h-auto">
                         <input type="radio" name="my_tabs_1" defaultChecked />
@@ -204,7 +204,7 @@ export default function DashboardPage() {
                     </div>
                 </div>
             </div>
-            <div className="col-span-1">
+            <div className="lg:col-span-1">
                 <div className="card bg-base-100 shadow">
                     <div className="card-body">
                         <div className="card-title">
@@ -251,7 +251,7 @@ export default function DashboardPage() {
                     </div>
                 </div>
             </div>
-            <div className="col-span-1">
+            <div className="lg:col-span-1">
                 <div className="card bg-base-100 shadow">
                     <div className="card-body">
                         <div className="card-title">
@@ -298,11 +298,11 @@ export default function DashboardPage() {
                     </div>
                 </div>
             </div>
-            <div className="col-span-1">
+            <div className="lg:col-span-1">
                 <div className="card bg-base-100 shadow">
                     <div className="card-body">
                         <div className="card-title justify-between">
-                            <div>Device & Browser Breakdown</div>
+                            <div>Device & Browser</div>
                             <div role="tablist" className="tabs tabs-border tabs-sm">
                                 <a role="tab" className="tab px-4 tab-active">
                                     <span className="icon-[lucide--monitor-smartphone] size-4"></span>
@@ -318,7 +318,7 @@ export default function DashboardPage() {
                                     <Pie
                                         dataKey="value"
                                         cx="50%" cy="50%"
-                                        innerRadius={105}
+                                        innerRadius="50%"
                                         fill="var(--color-primary)"
                                         fillOpacity={0.95}
                                         stroke="var(--color-base-100)"
