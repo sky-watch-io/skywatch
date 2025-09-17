@@ -327,21 +327,21 @@ export default function DashboardPage() {
                                         minAngle={15}
                                         label={({ cx, cy, midAngle, innerRadius, outerRadius, name, value }: PieLabelRenderProps) => {
                                             const RADIAN = Math.PI / 180;
-                                            const radius = outerRadius + 10;
-                                            const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                                            const y = cy + radius * Math.sin(-midAngle * RADIAN);
+                                            const radius = (outerRadius as number) + 10;
+                                            const x = (cx as number) + radius * Math.cos(-(midAngle as number) * RADIAN);
+                                            const y = (cy as number) + radius * Math.sin(-(midAngle as number) * RADIAN);
 
                                             return (
                                                 <>
                                                     {/* Value inside */}
                                                     <text
-                                                        x={cx + (innerRadius + (outerRadius - innerRadius) / 2) * Math.cos(-midAngle * RADIAN)}
-                                                        y={cy + (innerRadius + (outerRadius - innerRadius) / 2) * Math.sin(-midAngle * RADIAN)}
+                                                        x={(cx as number) + ((innerRadius as number) + ((outerRadius as number) - (innerRadius as number)) / 2) * Math.cos(-(midAngle as number) * RADIAN)}
+                                                        y={(cy as number) + ((innerRadius as number) + ((outerRadius as number) - (innerRadius as number)) / 2) * Math.sin(-(midAngle as number) * RADIAN)}
                                                         fill="var(--color-primary-content)"
                                                         textAnchor="middle"
                                                         dominantBaseline="central"
                                                     >
-                                                        {value}
+                                                        {value as React.ReactNode}
                                                     </text>
 
                                                     {/* Name outside */}
@@ -349,7 +349,7 @@ export default function DashboardPage() {
                                                         x={x}
                                                         y={y}
                                                         fill="var(--color-base-content)"
-                                                        textAnchor={x > cx ? "start" : "end"}
+                                                        textAnchor={x > (cx as number) ? "start" : "end"}
                                                         dominantBaseline="central"
                                                     >
                                                         {name}
