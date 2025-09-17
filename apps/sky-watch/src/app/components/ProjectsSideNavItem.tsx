@@ -1,10 +1,10 @@
 export default function ProjectsSideNavItem() {
     return (
         <div className="dropdown dropdown-bottom dropdown-center w-full">
-            <div tabIndex={0} role="button" className="w-full flex justify-between items-center px-5 py-3 cursor-pointer hover:bg-base-200 text-base-content">
+            <div tabIndex={0} role="button" className="w-full flex justify-between items-center px-5 py-3 cursor-pointer hover:bg-base-200/25 text-base-content">
                 <div className="flex gap-3 items-center">
                     <div className="avatar avatar-placeholder">
-                        <div className="bg-secondary text-secondary-content w-10 rounded-lg">
+                        <div className="bg-secondary text-secondary-content w-10 rounded">
                             <span className="font-medium tracking-wide">SW</span>
                         </div>
                     </div>
@@ -17,12 +17,13 @@ export default function ProjectsSideNavItem() {
             </div>
             <ul
                 tabIndex={0}
-                className="menu dropdown-content w-11/12 p-2 border border-base-300 bg-base-200 rounded-md shadow-sm">
+                className="menu dropdown-content w-11/12 p-2 border border-base-300 bg-base-100 rounded-md shadow-sm">
+                <div className="text-sm tracking-wide py-2 px-4 font-medium">Projects (3)</div>
                 <li>
                     <a className="py-3">
                         <div className="flex gap-2 items-center">
                             <div className="avatar avatar-placeholder">
-                                <div className="bg-secondary text-secondary-content w-9 rounded-lg">
+                                <div className="bg-secondary text-secondary-content w-8 rounded">
                                     <span className="text-sm font-medium tracking-wide">SW</span>
                                 </div>
                             </div>
@@ -37,7 +38,7 @@ export default function ProjectsSideNavItem() {
                     <a className="py-3">
                         <div className="flex gap-2 items-center">
                             <div className="avatar avatar-placeholder">
-                                <div className="bg-accent text-accent-content w-9 rounded-lg">
+                                <div className="bg-accent text-accent-content w-8 rounded">
                                     <span className="text-sm font-medium tracking-wide">SA</span>
                                 </div>
                             </div>
@@ -52,7 +53,7 @@ export default function ProjectsSideNavItem() {
                     <a className="py-3">
                         <div className="flex gap-2 items-center">
                             <div className="avatar avatar-placeholder">
-                                <div className="bg-primary text-primary-content w-9 rounded-lg">
+                                <div className="bg-primary text-primary-content w-8 rounded">
                                     <span className="text-sm font-medium tracking-wide">SA</span>
                                 </div>
                             </div>
