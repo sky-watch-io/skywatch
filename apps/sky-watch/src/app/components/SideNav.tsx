@@ -20,7 +20,7 @@ export default function SideNav() {
                             <a>
                                 <span className="icon-[lucide--monitor-dot] size-5"></span>
                                 <div>Dashboards</div>
-                                <span className="badge badge-sm">1</span>
+                                <span className="badge badge-sm badge-secondary">1</span>
                             </a>
 
                         </li>
@@ -28,21 +28,21 @@ export default function SideNav() {
                             <a>
                                 <span className="icon-[lucide--bug] size-5"></span>
                                 <div>Errors</div>
-                                <span className="badge badge-sm badge-primary">3</span>
+                                <span className="badge badge-sm badge-secondary">3</span>
                             </a>
                         </li>
                         <li>
                             <a>
                                 <span className="icon-[lucide--monitor-play] size-5"></span>
                                 <div>Replays</div>
-                                <span className="badge badge-sm badge-neutral">22</span>
+                                <span className="badge badge-sm badge-secondary">22</span>
                             </a>
                         </li>
                         <li>
                             <a>
                                 <span className="icon-[lucide--brain-circuit] size-5"></span>
                                 <div>Insights</div>
-                                <span className="badge badge-sm badge-neutral">1</span>
+                                <span className="badge badge-sm badge-secondary">1</span>
                             </a>
                         </li>
                         <li>

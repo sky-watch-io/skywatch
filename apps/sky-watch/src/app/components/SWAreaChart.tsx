@@ -31,7 +31,7 @@ export default function SWAreaChart({
                 </defs>
                 {
                     TopTooltip && (
-                        <Tooltip content={<TopTooltip />} position={{ y: 18 }} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 2 }} />
+                        <Tooltip content={<TopTooltip />} position={{ y: 18 }} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 1.75 }} />
                     )
                 }
                 {
@@ -43,7 +43,7 @@ export default function SWAreaChart({
                     horizontal={true}
                     vertical={false}
                     stroke="var(--color-base-content)"
-                    strokeWidth={0.15}
+                    strokeOpacity={0.1}
                 />
                 <XAxis
                     dataKey="timestamp"
@@ -51,6 +51,7 @@ export default function SWAreaChart({
                     domain={['dataMin', 'dataMax']}
                     tickFormatter={XTickFormatter}
                     stroke="var(--color-base-content)"
+                    strokeWidth={1}
                     tick={{ fill: "var(--color-base-content)", fontSize: 14 }}
                     tickMargin={8}
                     tickSize={12}

@@ -4,7 +4,7 @@ export default function ProjectsSideNavItem() {
             <div tabIndex={0} role="button" className="w-full flex justify-between items-center px-5 py-3 cursor-pointer hover:bg-base-200/25 text-base-content">
                 <div className="flex gap-3 items-center">
                     <div className="avatar avatar-placeholder">
-                        <div className="bg-secondary text-secondary-content w-10 rounded">
+                        <div className="bg-primary text-primary-content w-10 rounded">
                             <span className="font-medium tracking-wide">SW</span>
                         </div>
                     </div>

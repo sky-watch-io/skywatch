@@ -42,7 +42,7 @@ const TopTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
         const date = new Date(payload[0].payload.timestamp);
         return (
-            <div className="border border-base-content bg-base-100 shadow rounded px-3 py-1 transform -translate-x-1/2 -translate-y-full text-sm">
+            <div className="border-2 border-primary bg-base-100 rounded px-3 py-1 transform -translate-x-1/2 -translate-y-full text-sm">
                 {format(date, "EEE, dd MMM")}: <strong>{payload[0].value} visitors</strong>
             </div>
         );
@@ -55,7 +55,7 @@ const BottomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
         const date = new Date(payload[0].payload.timestamp);
         return (
-            <div className="border border-base-content bg-base-100 shadow rounded px-3 py-1 transform -translate-x-1/2 translate-y-full text-sm">
+            <div className="border-2 border-primary bg-base-100 rounded px-3 py-1 transform -translate-x-1/2 translate-y-full text-sm">
                 {formatDistanceToNowStrict(date, { addSuffix: true })}
             </div>
         );
@@ -66,7 +66,7 @@ const BottomTooltip = ({ active, payload }: any) => {
 
 export default function DashboardPage() {
     return (
-        <div className="grid gap-5 grid-cols-3">
+        <div className="grid gap-6 grid-cols-3">
             <div className="col-span-3">
                 <div className="tabs tabs-lift h-auto">
                     <label className="tab h-auto">
@@ -82,7 +82,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-10 bg-base-100 border-base-300">
+                    <div className="tab-content p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data1}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -103,7 +103,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-10 bg-base-100 border-base-300">
+                    <div className="tab-content p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data2}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -124,7 +124,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-10 bg-base-100 border-base-300">
+                    <div className="tab-content p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data3}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -145,7 +145,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-10 bg-base-100 border-base-300">
+                    <div className="tab-content p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data4}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -166,7 +166,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-10 bg-base-100 border-base-300">
+                    <div className="tab-content p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data5}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -187,7 +187,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-10 bg-base-100 border-base-300">
+                    <div className="tab-content p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data6}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -198,7 +198,7 @@ export default function DashboardPage() {
                 </div>
             </div>
             <div className="col-span-1">
-                <div className="card bg-base-100 p-10 shadow">
+                <div className="card bg-base-100 shadow">
                     <div className="card-body">
                         <div className="card-title">
                             Top Landing Pages
@@ -209,32 +209,32 @@ export default function DashboardPage() {
                                 <div className="">Views</div>
                             </div>
                             <div className="flex flex-col gap-2 font-medium">
-                                <div className="flex items-center justify-between relative gap-4">
-                                    <div className="h-9 rounded w-[100%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap z-20">
+                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
+                                    <div className="h-9 rounded w-[100%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">1000</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4">
-                                    <div className="h-9 rounded w-[80%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap z-20">
+                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
+                                    <div className="h-9 rounded w-[80%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">800</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4">
-                                    <div className="h-9 rounded w-[60%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap z-20">
+                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
+                                    <div className="h-9 rounded w-[60%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">600</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4">
-                                    <div className="h-9 rounded w-[40%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap z-20">
+                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
+                                    <div className="h-9 rounded w-[40%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">400</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4">
-                                    <div className="h-9 rounded w-[30%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap z-20">
+                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
+                                    <div className="h-9 rounded w-[30%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">300</p>
@@ -245,7 +245,7 @@ export default function DashboardPage() {
                 </div>
             </div>
             <div className="col-span-1">
-                <div className="card bg-base-100 p-10 shadow">
+                <div className="card bg-base-100 shadow">
                     <div className="card-body">
                         <div className="card-title">
                             Top Exit Pages
@@ -256,32 +256,32 @@ export default function DashboardPage() {
                                 <div className="">Views</div>
                             </div>
                             <div className="flex flex-col gap-2 font-medium">
-                                <div className="flex items-center justify-between relative gap-4">
-                                    <div className="h-9 rounded w-[100%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap z-20">
+                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
+                                    <div className="h-9 rounded w-[100%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4">
-                                    <div className="h-9 rounded w-[70%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap z-20">
+                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
+                                    <div className="h-9 rounded w-[70%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4">
-                                    <div className="h-9 rounded w-[30%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap z-20">
+                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
+                                    <div className="h-9 rounded w-[30%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4">
-                                    <div className="h-9 rounded w-[20%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap z-20">
+                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
+                                    <div className="h-9 rounded w-[20%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
-                                <div className="flex items-center justify-between gap-4">
-                                    <div className="h-9 rounded w-[10%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap z-20">
+                                <div className="flex items-center justify-between gap-4 cursor-pointer group">
+                                    <div className="h-9 rounded w-[10%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
@@ -292,7 +292,7 @@ export default function DashboardPage() {
                 </div>
             </div>
             <div className="col-span-1">
-                <div className="card bg-base-100 p-10 shadow">
+                <div className="card bg-base-100 shadow">
                     <div className="card-body">
                         <div className="card-title">
                             Device & Browser Breakdown
