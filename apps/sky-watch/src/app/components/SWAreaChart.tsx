@@ -43,7 +43,7 @@ export default function SWAreaChart({
                     horizontal={true}
                     vertical={false}
                     stroke="var(--color-base-content)"
-                    strokeOpacity={0.1}
+                    strokeOpacity={0.05}
                 />
                 <XAxis
                     dataKey="timestamp"

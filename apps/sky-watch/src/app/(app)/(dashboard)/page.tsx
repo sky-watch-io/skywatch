@@ -2,6 +2,7 @@
 import SWAreaChart from "@/app/components/SWAreaChart";
 import { faker } from "@faker-js/faker";
 import { format, formatDistanceToNowStrict } from "date-fns";
+import { Pie, PieChart, ResponsiveContainer, PieLabelRenderProps } from "recharts";
 
 const generateTimeSeriesData = () => {
     const data = [];
@@ -63,6 +64,12 @@ const BottomTooltip = ({ active, payload }: any) => {
     return null;
 };
 
+const data01 = [
+    { name: 'Desktop', value: 4000 },
+    { name: 'Mobile', value: 1500 },
+    { name: 'Tablet', value: 20 }
+];
+
 
 export default function DashboardPage() {
     return (
@@ -82,7 +89,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-6 bg-base-100 border-base-300">
+                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data1}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -103,7 +110,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-6 bg-base-100 border-base-300">
+                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data2}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -124,7 +131,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-6 bg-base-100 border-base-300">
+                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data3}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -145,7 +152,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-6 bg-base-100 border-base-300">
+                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data4}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -166,7 +173,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-6 bg-base-100 border-base-300">
+                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data5}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -187,7 +194,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content p-6 bg-base-100 border-base-300">
+                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data6}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -203,38 +210,38 @@ export default function DashboardPage() {
                         <div className="card-title">
                             Top Landing Pages
                         </div>
-                        <div className="py-2 space-y-2">
+                        <div className="space-y-2">
                             <div className="flex justify-between">
                                 <div className="">Page</div>
                                 <div className="">Views</div>
                             </div>
                             <div className="flex flex-col gap-2 font-medium">
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[100%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-9 rounded w-[100%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">1000</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[80%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-9 rounded w-[80%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">800</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[60%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-9 rounded w-[60%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">600</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[40%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-9 rounded w-[40%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">400</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[30%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-9 rounded w-[30%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">300</p>
@@ -250,38 +257,38 @@ export default function DashboardPage() {
                         <div className="card-title">
                             Top Exit Pages
                         </div>
-                        <div className="py-2 space-y-2">
+                        <div className="space-y-2">
                             <div className="flex justify-between">
                                 <div className="">Page</div>
                                 <div className="">Views</div>
                             </div>
                             <div className="flex flex-col gap-2 font-medium">
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[100%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-9 rounded w-[100%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[70%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-9 rounded w-[70%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[30%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-9 rounded w-[30%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[20%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-9 rounded w-[20%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
                                 <div className="flex items-center justify-between gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[10%] bg-base-300 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-9 rounded w-[10%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
@@ -294,8 +301,65 @@ export default function DashboardPage() {
             <div className="col-span-1">
                 <div className="card bg-base-100 shadow">
                     <div className="card-body">
-                        <div className="card-title">
-                            Device & Browser Breakdown
+                        <div className="card-title justify-between">
+                            <div>Device & Browser Breakdown</div>
+                            <div role="tablist" className="tabs tabs-border tabs-sm">
+                                <a role="tab" className="tab px-4 tab-active">
+                                    <span className="icon-[lucide--monitor-smartphone] size-4"></span>
+                                </a>
+                                <a role="tab" className="tab px-4">
+                                    <span className="icon-[lucide--globe] size-4"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <ResponsiveContainer height={420}>
+                                <PieChart data={data01}>
+                                    <Pie
+                                        dataKey="value"
+                                        cx="50%" cy="50%"
+                                        innerRadius={105}
+                                        fill="var(--color-primary)"
+                                        fillOpacity={0.95}
+                                        stroke="var(--color-base-100)"
+                                        paddingAngle={4} isAnimationActive={false}
+                                        labelLine={false}
+                                        minAngle={15}
+                                        label={({ cx, cy, midAngle, innerRadius, outerRadius, name, value }: PieLabelRenderProps) => {
+                                            const RADIAN = Math.PI / 180;
+                                            const radius = outerRadius + 10;
+                                            const x = cx + radius * Math.cos(-midAngle * RADIAN);
+                                            const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+                                            return (
+                                                <>
+                                                    {/* Value inside */}
+                                                    <text
+                                                        x={cx + (innerRadius + (outerRadius - innerRadius) / 2) * Math.cos(-midAngle * RADIAN)}
+                                                        y={cy + (innerRadius + (outerRadius - innerRadius) / 2) * Math.sin(-midAngle * RADIAN)}
+                                                        fill="var(--color-primary-content)"
+                                                        textAnchor="middle"
+                                                        dominantBaseline="central"
+                                                    >
+                                                        {value}
+                                                    </text>
+
+                                                    {/* Name outside */}
+                                                    <text
+                                                        x={x}
+                                                        y={y}
+                                                        fill="var(--color-base-content)"
+                                                        textAnchor={x > cx ? "start" : "end"}
+                                                        dominantBaseline="central"
+                                                    >
+                                                        {name}
+                                                    </text>
+                                                </>
+                                            );
+                                        }}
+                                    />
+                                </PieChart>
+                            </ResponsiveContainer>
                         </div>
                     </div>
                 </div>
