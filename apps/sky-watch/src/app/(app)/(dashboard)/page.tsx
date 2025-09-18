@@ -76,11 +76,11 @@ export default function DashboardPage() {
         <div className="grid gap-6 lg:grid-cols-3">
             <div className="lg:col-span-3">
                 <div className="tabs tabs-lift h-auto">
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" defaultChecked />
-                        <div className="stat px-1 lg:px-6">
+                        <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--users] size-4"></span>
+                                <span className="icon-[lucide--users] size-5 text-base-content"></span>
                                 <div className="hidden lg:block">Visitors</div>
                             </div>
                             <div className="stat-value hidden lg:block">89,400</div>
@@ -92,19 +92,20 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
+                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
                         <SWAreaChart
                             data={data1}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
+                            // YTickFormatter={((visitors: number) => (visitors / 1000).toString() + "K")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat px-1 lg:px-6">
+                        <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--eye] size-4"></span>
+                                <span className="icon-[lucide--eye] size-5 text-base-content"></span>
                                 <div className="hidden lg:block">Visits</div>
                             </div>
                             <div className="stat-value hidden lg:block">89,400</div>
@@ -116,7 +117,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
+                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
                         <SWAreaChart
                             data={data2}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -124,11 +125,11 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat px-1 lg:px-6">
+                        <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--view] size-4"></span>
+                                <span className="icon-[lucide--view] size-5 text-base-content"></span>
                                 <div className="hidden lg:block">Page Views</div>
                             </div>
                             <div className="stat-value hidden lg:block">89,400</div>
@@ -140,7 +141,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
+                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
                         <SWAreaChart
                             data={data3}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -148,11 +149,11 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat px-1 lg:px-6">
+                        <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--timer] size-4"></span>
+                                <span className="icon-[lucide--timer] size-5 text-base-content"></span>
                                 <div className="hidden lg:block">Average Session Duration</div>
                             </div>
                             <div className="stat-value hidden lg:block">2m 23s</div>
@@ -164,7 +165,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
+                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
                         <SWAreaChart
                             data={data4}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -172,11 +173,11 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat px-1 lg:px-6">
+                        <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--layers] size-4"></span>
+                                <span className="icon-[lucide--layers] size-5 text-base-content"></span>
                                 <div className="hidden lg:block">Pages per visit</div>
                             </div>
                             <div className="stat-value hidden lg:block">3</div>
@@ -188,7 +189,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
+                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
                         <SWAreaChart
                             data={data5}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -196,11 +197,11 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat px-1 lg:px-6">
+                        <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[tabler--arrow-bounce] size-4"></span>
+                                <span className="icon-[tabler--arrow-bounce] size-5 text-base-content"></span>
                                 <div className="hidden lg:block">Bounce Rate</div>
                             </div>
                             <div className="stat-value hidden lg:block">76%</div>
@@ -212,7 +213,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-6 py-8 bg-base-100 border-base-300">
+                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
                         <SWAreaChart
                             data={data6}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -331,53 +332,55 @@ export default function DashboardPage() {
                             </div>
                         </div>
                         <div>
-                            <ResponsiveContainer height={210}>
-                                <PieChart data={data01}>
-                                    <Pie
-                                        dataKey="value"
-                                        cx="50%" cy="50%"
-                                        innerRadius="50%"
-                                        fill="var(--color-primary)"
-                                        fillOpacity={0.95}
-                                        stroke="var(--color-base-100)"
-                                        paddingAngle={4} isAnimationActive={false}
-                                        labelLine={false}
-                                        minAngle={15}
-                                        label={({ cx, cy, midAngle, innerRadius, outerRadius, name, value }: PieLabelRenderProps) => {
-                                            const RADIAN = Math.PI / 180;
-                                            const radius = (outerRadius as number) + 10;
-                                            const x = (cx as number) + radius * Math.cos(-(midAngle as number) * RADIAN);
-                                            const y = (cy as number) + radius * Math.sin(-(midAngle as number) * RADIAN);
+                            <div className='h-52 lg:h-105'>
+                                <ResponsiveContainer >
+                                    <PieChart data={data01}>
+                                        <Pie
+                                            dataKey="value"
+                                            cx="50%" cy="50%"
+                                            innerRadius="50%"
+                                            fill="var(--color-primary)"
+                                            fillOpacity={0.95}
+                                            stroke="var(--color-base-100)"
+                                            paddingAngle={4} isAnimationActive={false}
+                                            labelLine={false}
+                                            minAngle={15}
+                                            label={({ cx, cy, midAngle, innerRadius, outerRadius, name, value }: PieLabelRenderProps) => {
+                                                const RADIAN = Math.PI / 180;
+                                                const radius = (outerRadius as number) + 10;
+                                                const x = (cx as number) + radius * Math.cos(-(midAngle as number) * RADIAN);
+                                                const y = (cy as number) + radius * Math.sin(-(midAngle as number) * RADIAN);
 
-                                            return (
-                                                <>
-                                                    {/* Value inside */}
-                                                    <text
-                                                        x={(cx as number) + ((innerRadius as number) + ((outerRadius as number) - (innerRadius as number)) / 2) * Math.cos(-(midAngle as number) * RADIAN)}
-                                                        y={(cy as number) + ((innerRadius as number) + ((outerRadius as number) - (innerRadius as number)) / 2) * Math.sin(-(midAngle as number) * RADIAN)}
-                                                        fill="var(--color-primary-content)"
-                                                        textAnchor="middle"
-                                                        dominantBaseline="central"
-                                                    >
-                                                        {value as React.ReactNode}
-                                                    </text>
+                                                return (
+                                                    <>
+                                                        {/* Value inside */}
+                                                        <text
+                                                            x={(cx as number) + ((innerRadius as number) + ((outerRadius as number) - (innerRadius as number)) / 2) * Math.cos(-(midAngle as number) * RADIAN)}
+                                                            y={(cy as number) + ((innerRadius as number) + ((outerRadius as number) - (innerRadius as number)) / 2) * Math.sin(-(midAngle as number) * RADIAN)}
+                                                            fill="var(--color-primary-content)"
+                                                            textAnchor="middle"
+                                                            dominantBaseline="central"
+                                                        >
+                                                            {value as React.ReactNode}
+                                                        </text>
 
-                                                    {/* Name outside */}
-                                                    <text
-                                                        x={x}
-                                                        y={y}
-                                                        fill="var(--color-base-content)"
-                                                        textAnchor={x > (cx as number) ? "start" : "end"}
-                                                        dominantBaseline="central"
-                                                    >
-                                                        {name}
-                                                    </text>
-                                                </>
-                                            );
-                                        }}
-                                    />
-                                </PieChart>
-                            </ResponsiveContainer>
+                                                        {/* Name outside */}
+                                                        <text
+                                                            x={x}
+                                                            y={y}
+                                                            fill="var(--color-base-content)"
+                                                            textAnchor={x > (cx as number) ? "start" : "end"}
+                                                            dominantBaseline="central"
+                                                        >
+                                                            {name}
+                                                        </text>
+                                                    </>
+                                                );
+                                            }}
+                                        />
+                                    </PieChart>
+                                </ResponsiveContainer>
+                            </div>
                         </div>
                     </div>
                 </div>
