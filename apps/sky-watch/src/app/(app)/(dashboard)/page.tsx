@@ -6,7 +6,7 @@ import { Pie, PieChart, ResponsiveContainer, PieLabelRenderProps } from "rechart
 
 const generateTimeSeriesData = () => {
     const data = [];
-    const periods = 72;
+    const periods = 60;
 
     for (let i = periods - 1; i >= 0; i--) {
 

@@ -20,7 +20,12 @@ const notoSansMono = Noto_Sans_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SkyWatch"
+  title: "SkyWatch",
+  description: `A modern web analytics platform that helps you understand your visitors with real-time insights, 
+    session replays, error tracking, performance metrics, and user behavior analysis`,
+  other: {
+    "format-detection": "telephone=no,email=no"
+  }
 };
 
 export default function RootLayout({
