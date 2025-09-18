@@ -73,14 +73,14 @@ const data01 = [
 
 export default function DashboardPage() {
     return (
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-2 lg:gap-6 lg:grid-cols-3">
             <div className="lg:col-span-3">
                 <div className="tabs tabs-lift h-auto">
                     <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" defaultChecked />
                         <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--users] size-5 text-base-content"></span>
+                                <span className="icon-[lucide--users] size-5 text-base-content lg:text-inherit"></span>
                                 <div className="hidden lg:block">Visitors</div>
                             </div>
                             <div className="stat-value hidden lg:block">89,400</div>
@@ -92,7 +92,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
+                    <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data1}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -105,7 +105,7 @@ export default function DashboardPage() {
                         <input type="radio" name="my_tabs_1" />
                         <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--eye] size-5 text-base-content"></span>
+                                <span className="icon-[lucide--eye] size-5 text-base-content lg:text-inherit"></span>
                                 <div className="hidden lg:block">Visits</div>
                             </div>
                             <div className="stat-value hidden lg:block">89,400</div>
@@ -117,7 +117,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
+                    <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data2}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -129,7 +129,7 @@ export default function DashboardPage() {
                         <input type="radio" name="my_tabs_1" />
                         <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--view] size-5 text-base-content"></span>
+                                <span className="icon-[lucide--view] size-5 text-base-content lg:text-inherit"></span>
                                 <div className="hidden lg:block">Page Views</div>
                             </div>
                             <div className="stat-value hidden lg:block">89,400</div>
@@ -141,7 +141,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
+                    <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data3}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -153,7 +153,7 @@ export default function DashboardPage() {
                         <input type="radio" name="my_tabs_1" />
                         <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--timer] size-5 text-base-content"></span>
+                                <span className="icon-[lucide--timer] size-5 text-base-content lg:text-inherit"></span>
                                 <div className="hidden lg:block">Average Session Duration</div>
                             </div>
                             <div className="stat-value hidden lg:block">2m 23s</div>
@@ -165,7 +165,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
+                    <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data4}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -177,7 +177,7 @@ export default function DashboardPage() {
                         <input type="radio" name="my_tabs_1" />
                         <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--layers] size-5 text-base-content"></span>
+                                <span className="icon-[lucide--layers] size-5 text-base-content lg:text-inherit"></span>
                                 <div className="hidden lg:block">Pages per visit</div>
                             </div>
                             <div className="stat-value hidden lg:block">3</div>
@@ -189,7 +189,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
+                    <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data5}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -201,7 +201,7 @@ export default function DashboardPage() {
                         <input type="radio" name="my_tabs_1" />
                         <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[tabler--arrow-bounce] size-5 text-base-content"></span>
+                                <span className="icon-[tabler--arrow-bounce] size-5 text-base-content lg:text-inherit"></span>
                                 <div className="hidden lg:block">Bounce Rate</div>
                             </div>
                             <div className="stat-value hidden lg:block">76%</div>
@@ -213,7 +213,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                     </label>
-                    <div className="tab-content px-4 lg:px-6 py-8 bg-base-100 border-base-300 rounded-none">
+                    <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <SWAreaChart
                             data={data6}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
@@ -224,8 +224,8 @@ export default function DashboardPage() {
                 </div>
             </div>
             <div className="lg:col-span-1">
-                <div className="card bg-base-100 shadow-xs">
-                    <div className="card-body">
+                <div className="card bg-base-100 border border-base-300">
+                    <div className="card-body p-4 lg:p-6">
                         <div className="card-title">
                             Top Landing Pages
                         </div>
@@ -271,8 +271,8 @@ export default function DashboardPage() {
                 </div>
             </div>
             <div className="lg:col-span-1">
-                <div className="card bg-base-100 shadow-xs">
-                    <div className="card-body">
+                <div className="card bg-base-100 border border-base-300">
+                    <div className="card-body p-4 lg:p-6">
                         <div className="card-title">
                             Top Exit Pages
                         </div>
@@ -318,8 +318,8 @@ export default function DashboardPage() {
                 </div>
             </div>
             <div className="lg:col-span-1">
-                <div className="card bg-base-100 shadow-xs">
-                    <div className="card-body">
+                <div className="card bg-base-100 border border-base-300">
+                    <div className="card-body p-4 lg:p-6">
                         <div className="card-title justify-between">
                             <div>Device & Browser</div>
                             <div role="tablist" className="tabs tabs-border tabs-sm">
