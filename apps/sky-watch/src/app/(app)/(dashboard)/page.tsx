@@ -236,31 +236,31 @@ export default function DashboardPage() {
                             </div>
                             <div className="flex flex-col gap-2 font-medium">
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[100%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-7 rounded-sm w-[100%] bg-primary/15 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">1000</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[80%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-7 rounded-sm w-[80%] bg-primary/15 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">800</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[60%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-7 rounded-sm w-[60%] bg-primary/15 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">600</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[40%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-7 rounded-sm w-[40%] bg-primary/15 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">400</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[30%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-7 rounded-sm w-[30%] bg-primary/15 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">300</p>
@@ -283,31 +283,31 @@ export default function DashboardPage() {
                             </div>
                             <div className="flex flex-col gap-2 font-medium">
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[100%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-7 rounded-sm w-[100%] bg-primary/15 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[70%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-7 rounded-sm w-[70%] bg-primary/15 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[30%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-7 rounded-sm w-[30%] bg-primary/15 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
                                 <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[20%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-7 rounded-sm w-[20%] bg-primary/15 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
                                 </div>
                                 <div className="flex items-center justify-between gap-4 cursor-pointer group">
-                                    <div className="h-9 rounded w-[10%] bg-base-200 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
+                                    <div className="h-7 rounded-sm w-[10%] bg-primary/15 text-base-content flex items-center pl-4 text-nowrap group-hover:underline">
                                         /errors
                                     </div>
                                     <p className="w-12 text-right">10</p>
