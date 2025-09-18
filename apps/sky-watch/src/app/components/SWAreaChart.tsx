@@ -31,15 +31,15 @@ export default function SWAreaChart({
                         </linearGradient>
                     </defs>
                     {/* {
-                    TopTooltip && (
-                        <Tooltip content={<TopTooltip />} position={{ y: 18 }} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 1.75 }} />
-                    )
-                }
-                {
-                    BottomTooltip && (
-                        <Tooltip content={<BottomTooltip />} isAnimationActive={false} position={{ y: 340 }} cursor={false} />
-                    )
-                } */}
+                        TopTooltip && (
+                            <Tooltip content={<TopTooltip />} position={{ y: 18 }} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 1.75 }} />
+                        )
+                    }
+                    {
+                        BottomTooltip && (
+                            <Tooltip content={<BottomTooltip />} isAnimationActive={false} position={{ y: 340 }} cursor={false} />
+                        )
+                    } */}
                     <CartesianGrid
                         horizontal={true}
                         vertical={false}
