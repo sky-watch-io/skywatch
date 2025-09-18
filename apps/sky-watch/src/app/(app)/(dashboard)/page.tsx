@@ -76,9 +76,9 @@ export default function DashboardPage() {
         <div className="grid gap-6 lg:grid-cols-3">
             <div className="lg:col-span-3">
                 <div className="tabs tabs-lift h-auto">
-                    <label className="tab h-auto flex-1">
+                    <label className="tab h-auto">
                         <input type="radio" name="my_tabs_1" defaultChecked />
-                        <div className="stat px-0">
+                        <div className="stat px-1 lg:px-6">
                             <div className="stat-title justify-center flex items-center gap-2">
                                 <span className="icon-[lucide--users] size-4"></span>
                                 <div className="hidden lg:block">Visitors</div>
@@ -100,9 +100,9 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto flex-1">
+                    <label className="tab h-auto">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat px-0">
+                        <div className="stat px-1 lg:px-6">
                             <div className="stat-title justify-center flex items-center gap-2">
                                 <span className="icon-[lucide--eye] size-4"></span>
                                 <div className="hidden lg:block">Visits</div>
@@ -124,9 +124,9 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto flex-1">
+                    <label className="tab h-auto">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat px-0">
+                        <div className="stat px-1 lg:px-6">
                             <div className="stat-title justify-center flex items-center gap-2">
                                 <span className="icon-[lucide--view] size-4"></span>
                                 <div className="hidden lg:block">Page Views</div>
@@ -148,9 +148,9 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto flex-1">
+                    <label className="tab h-auto">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat px-0">
+                        <div className="stat px-1 lg:px-6">
                             <div className="stat-title justify-center flex items-center gap-2">
                                 <span className="icon-[lucide--timer] size-4"></span>
                                 <div className="hidden lg:block">Average Session Duration</div>
@@ -172,9 +172,9 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto flex-1">
+                    <label className="tab h-auto">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat px-0">
+                        <div className="stat px-1 lg:px-6">
                             <div className="stat-title justify-center flex items-center gap-2">
                                 <span className="icon-[lucide--layers] size-4"></span>
                                 <div className="hidden lg:block">Pages per visit</div>
@@ -196,9 +196,9 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto flex-1">
+                    <label className="tab h-auto">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat px-0">
+                        <div className="stat px-1 lg:px-6">
                             <div className="stat-title justify-center flex items-center gap-2">
                                 <span className="icon-[tabler--arrow-bounce] size-4"></span>
                                 <div className="hidden lg:block">Bounce Rate</div>
