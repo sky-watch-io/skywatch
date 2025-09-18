@@ -6,11 +6,11 @@ import { Pie, PieChart, ResponsiveContainer, PieLabelRenderProps } from "rechart
 
 const generateTimeSeriesData = () => {
     const data = [];
-    const periods = 72;
+    const periods = 24;
 
     for (let i = periods - 1; i >= 0; i--) {
 
-        const baseTotal = faker.number.int({ min: 3000, max: 10000 });
+        const baseTotal = faker.number.int({ min: 300, max: 10000 });
 
 
         const currentDate = new Date(Date.now() - i * 60 * 60 * 1000);
@@ -74,14 +74,17 @@ const data01 = [
 export default function DashboardPage() {
     return (
         <div className="grid gap-6 lg:grid-cols-3">
-            <div className="hidden lg:col-span-3 lg:block">
+            <div className="lg:col-span-3">
                 <div className="tabs tabs-lift h-auto">
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" defaultChecked />
-                        <div className="stat">
-                            <div className="stat-title">Visitors</div>
-                            <div className="stat-value">89,400</div>
-                            <div className="stat-desc text-success font-semibold">
+                        <div className="stat px-0">
+                            <div className="stat-title justify-center flex items-center gap-2">
+                                <span className="icon-[lucide--users] size-4"></span>
+                                <div className="hidden lg:block">Visitors</div>
+                            </div>
+                            <div className="stat-value hidden lg:block">89,400</div>
+                            <div className="stat-desc text-success font-semibold hidden lg:block">
                                 <div className="flex gap-2 justify-center">
                                     <span className="icon-[lucide--trending-up] size-5"></span>
                                     <span className="font-semibold">21%</span>
@@ -97,12 +100,15 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat">
-                            <div className="stat-title">Visits</div>
-                            <div className="stat-value">89,400</div>
-                            <div className="stat-desc text-error font-semibold">
+                        <div className="stat px-0">
+                            <div className="stat-title justify-center flex items-center gap-2">
+                                <span className="icon-[lucide--eye] size-4"></span>
+                                <div className="hidden lg:block">Visits</div>
+                            </div>
+                            <div className="stat-value hidden lg:block">89,400</div>
+                            <div className="stat-desc text-error font-semibold hidden lg:block">
                                 <div className="flex gap-2 justify-center">
                                     <span className="icon-[lucide--trending-down] size-5"></span>
                                     <span className="font-semibold">21%</span>
@@ -118,12 +124,15 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat">
-                            <div className="stat-title">Page Views</div>
-                            <div className="stat-value">89,400</div>
-                            <div className="stat-desc text-success font-semibold">
+                        <div className="stat px-0">
+                            <div className="stat-title justify-center flex items-center gap-2">
+                                <span className="icon-[lucide--view] size-4"></span>
+                                <div className="hidden lg:block">Page Views</div>
+                            </div>
+                            <div className="stat-value hidden lg:block">89,400</div>
+                            <div className="stat-desc text-success font-semibold hidden lg:block">
                                 <div className="flex gap-2 justify-center">
                                     <span className="icon-[lucide--trending-up] size-5"></span>
                                     <span className="font-semibold">21%</span>
@@ -139,12 +148,15 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat">
-                            <div className="stat-title">Average Session Duration</div>
-                            <div className="stat-value">2m 23s</div>
-                            <div className="stat-desc text-error font-semibold">
+                        <div className="stat px-0">
+                            <div className="stat-title justify-center flex items-center gap-2">
+                                <span className="icon-[lucide--timer] size-4"></span>
+                                <div className="hidden lg:block">Average Session Duration</div>
+                            </div>
+                            <div className="stat-value hidden lg:block">2m 23s</div>
+                            <div className="stat-desc text-error font-semibold hidden lg:block">
                                 <div className="flex gap-2 justify-center">
                                     <span className="icon-[lucide--trending-down] size-5"></span>
                                     <span className="font-semibold">21%</span>
@@ -160,12 +172,15 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat">
-                            <div className="stat-title">Pages per visit</div>
-                            <div className="stat-value">3</div>
-                            <div className="stat-desc text-success font-semibold">
+                        <div className="stat px-0">
+                            <div className="stat-title justify-center flex items-center gap-2">
+                                <span className="icon-[lucide--layers] size-4"></span>
+                                <div className="hidden lg:block">Pages per visit</div>
+                            </div>
+                            <div className="stat-value hidden lg:block">3</div>
+                            <div className="stat-desc text-success font-semibold hidden lg:block">
                                 <div className="flex gap-2 justify-center">
                                     <span className="icon-[lucide--trending-up] size-5"></span>
                                     <span className="font-semibold">21%</span>
@@ -181,12 +196,15 @@ export default function DashboardPage() {
                             BottomTooltip={BottomTooltip}
                         />
                     </div>
-                    <label className="tab h-auto">
+                    <label className="tab h-auto flex-1">
                         <input type="radio" name="my_tabs_1" />
-                        <div className="stat">
-                            <div className="stat-title">Bounce Rate</div>
-                            <div className="stat-value">76%</div>
-                            <div className="stat-desc text-error font-semibold">
+                        <div className="stat px-0">
+                            <div className="stat-title justify-center flex items-center gap-2">
+                                <span className="icon-[tabler--arrow-bounce] size-4"></span>
+                                <div className="hidden lg:block">Bounce Rate</div>
+                            </div>
+                            <div className="stat-value hidden lg:block">76%</div>
+                            <div className="stat-desc text-error font-semibold hidden lg:block">
                                 <div className="flex gap-2 justify-center">
                                     <span className="icon-[lucide--trending-down] size-5"></span>
                                     <span className="font-semibold">21%</span>
@@ -205,7 +223,7 @@ export default function DashboardPage() {
                 </div>
             </div>
             <div className="lg:col-span-1">
-                <div className="card bg-base-100 shadow">
+                <div className="card bg-base-100 shadow-xs">
                     <div className="card-body">
                         <div className="card-title">
                             Top Landing Pages
@@ -252,7 +270,7 @@ export default function DashboardPage() {
                 </div>
             </div>
             <div className="lg:col-span-1">
-                <div className="card bg-base-100 shadow">
+                <div className="card bg-base-100 shadow-xs">
                     <div className="card-body">
                         <div className="card-title">
                             Top Exit Pages
@@ -299,7 +317,7 @@ export default function DashboardPage() {
                 </div>
             </div>
             <div className="lg:col-span-1">
-                <div className="card bg-base-100 shadow">
+                <div className="card bg-base-100 shadow-xs">
                     <div className="card-body">
                         <div className="card-title justify-between">
                             <div>Device & Browser</div>
@@ -313,7 +331,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                         <div>
-                            <ResponsiveContainer height={420}>
+                            <ResponsiveContainer height={210}>
                                 <PieChart data={data01}>
                                     <Pie
                                         dataKey="value"

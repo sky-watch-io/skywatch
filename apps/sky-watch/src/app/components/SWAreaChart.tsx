@@ -21,7 +21,7 @@ export default function SWAreaChart({
     data, XTickFormatter, YTickFormatter, TopTooltip, BottomTooltip
 }: SWAreaChartType) {
     return (
-        <ResponsiveContainer height={420}>
+        <ResponsiveContainer height={210}>
             <AreaChart data={data} >
                 <defs>
                     <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
@@ -29,7 +29,7 @@ export default function SWAreaChart({
                         <stop offset="98%" stopColor="white" stopOpacity={0} />
                     </linearGradient>
                 </defs>
-                {
+                {/* {
                     TopTooltip && (
                         <Tooltip content={<TopTooltip />} position={{ y: 18 }} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 1.75 }} />
                     )
@@ -38,7 +38,7 @@ export default function SWAreaChart({
                     BottomTooltip && (
                         <Tooltip content={<BottomTooltip />} isAnimationActive={false} position={{ y: 340 }} cursor={false} />
                     )
-                }
+                } */}
                 <CartesianGrid
                     horizontal={true}
                     vertical={false}
@@ -58,7 +58,7 @@ export default function SWAreaChart({
                     tickCount={5}
                     interval="preserveStartEnd"
                 />
-                <YAxis
+                {/* <YAxis
                     dataKey="total"
                     type="number"
                     domain={[0, 'auto']}
@@ -68,7 +68,7 @@ export default function SWAreaChart({
                     tickCount={5}
                     tickLine={false}
                     axisLine={false}
-                />
+                /> */}
                 <Area
                     type="linear"
                     dataKey="total"
