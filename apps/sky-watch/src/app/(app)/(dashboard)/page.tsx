@@ -2,7 +2,7 @@
 import SWAreaChart from "@/app/components/SWAreaChart";
 import { faker } from "@faker-js/faker";
 import { format, formatDistanceToNowStrict } from "date-fns";
-import { Pie, PieChart, ResponsiveContainer, PieLabelRenderProps, Cell } from "recharts";
+import { Pie, PieChart, ResponsiveContainer, Cell, Label } from "recharts";
 
 const generateTimeSeriesData = () => {
     const data = [];
@@ -70,6 +70,13 @@ const data01 = [
     { name: 'Tablet', value: 500 },
     { name: 'TV', value: 300 }
 ];
+
+const dataWithColors = data01.map((datum, index) => {
+    return {
+        ...datum,
+        alpha: 1 - (index / (data01.length - 1)) * 0.7
+    }
+})
 
 
 export default function DashboardPage() {
@@ -299,6 +306,81 @@ export default function DashboardPage() {
             <div className="lg:col-span-1">
                 <div className="card bg-base-100 border border-base-300">
                     <div className="card-body p-4 lg:p-6">
+                        <div className="card-title justify-between">
+                            <div>Device & Browser</div>
+                            <div role="tablist" className="tabs tabs-border tabs-sm">
+                                <a role="tab" className="tab px-4 tab-active">
+                                    <span className="icon-[lucide--monitor-smartphone] size-4"></span>
+                                </a>
+                                <a role="tab" className="tab px-4">
+                                    <span className="icon-[lucide--globe] size-4"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="flex">
+                            <div className="w-1/2 flex flex-col justify-center items-center gap-2">
+                                <div className="space-y-2">
+                                    {dataWithColors.map(({ name, value, alpha }) => (
+                                        <div key={name} className="text-sm flex gap-2 items-center">
+                                            <div className="size-4 rounded bg-primary" style={{ opacity: alpha }}></div>
+                                            <div>{name}</div>
+                                            <div className="font-semibold">{value}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className='h-52 lg:h-105 w-1/2 min-w-1/12'>
+                                <ResponsiveContainer >
+                                    <PieChart data={dataWithColors}>
+                                        <Pie
+                                            dataKey="value"
+                                            cx="50%" cy="50%"
+                                            outerRadius="100%"
+                                            innerRadius="70%"
+                                            fill="var(--color-primary)"
+                                            stroke="var(--color-base-100)"
+                                            strokeWidth={3}
+                                            isAnimationActive={false}
+                                            labelLine={false}
+                                            minAngle={15}
+                                        >
+                                            {
+                                                dataWithColors.map(({ alpha }, index) => {
+                                                    return <Cell key={index} fillOpacity={alpha} />;
+                                                })
+                                            }
+                                            <Label position="center" content={(props) => {
+                                                // @ts-ignore
+                                                const { x, y, width, height } = props.viewBox;
+                                                const size = 32;
+
+                                                const centerX = x + width / 2;
+                                                const centerY = y + height / 2;
+
+                                                return (
+                                                    <foreignObject
+                                                        x={centerX - size / 2}
+                                                        y={centerY - size / 2}
+                                                        width={size}
+                                                        height={size}
+                                                    >
+                                                        <div className="flex items-center justify-center w-full h-full">
+                                                            <span className="icon-[lucide--monitor-smartphone] size-8"></span>
+                                                        </div>
+                                                    </foreignObject>
+                                                );
+                                            }} />
+                                        </Pie>
+                                    </PieChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="lg:col-span-1">
+                <div className="card bg-base-100 border border-base-300">
+                    <div className="card-body p-4 lg:p-6">
                         <div className="card-title">
                             Top Landing Pages
                         </div>
@@ -311,35 +393,35 @@ export default function DashboardPage() {
                                 <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
                                     <div className="w-full space-y-1">
                                         <div className="text-base-content">/errors</div>
-                                        <div className="h-7 rounded-sm w-[100%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
+                                        <div className="h-6 rounded-sm w-[100%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
                                     <p className="w-12 text-right mb-1">1000</p>
                                 </div>
                                 <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
                                     <div className="w-full space-y-1">
                                         <div className="text-base-content">/errors</div>
-                                        <div className="h-7 rounded-sm w-[90%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
+                                        <div className="h-6 rounded-sm w-[90%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
                                     <p className="w-12 text-right mb-1">800</p>
                                 </div>
                                 <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
                                     <div className="w-full space-y-1">
                                         <div className="text-base-content">/errors</div>
-                                        <div className="h-7 rounded-sm w-[80%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
+                                        <div className="h-6 rounded-sm w-[80%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
                                     <p className="w-12 text-right mb-1">600</p>
                                 </div>
                                 <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
                                     <div className="w-full space-y-1">
                                         <div className="text-base-content">/errors</div>
-                                        <div className="h-7 rounded-sm w-[70%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
+                                        <div className="h-6 rounded-sm w-[70%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
                                     <p className="w-12 text-right mb-1">400</p>
                                 </div>
                                 <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
                                     <div className="w-full space-y-1">
                                         <div className="text-base-content">/errors</div>
-                                        <div className="h-7 rounded-sm w-[10%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
+                                        <div className="h-6 rounded-sm w-[10%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
                                     <p className="w-12 text-right mb-1">300</p>
                                 </div>
@@ -363,85 +445,38 @@ export default function DashboardPage() {
                                 <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
                                     <div className="w-full space-y-1">
                                         <div className="text-base-content">/errors</div>
-                                        <div className="h-7 rounded-sm w-[100%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
+                                        <div className="h-6 rounded-sm w-[100%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
                                     <p className="w-12 text-right mb-1">1000</p>
                                 </div>
                                 <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
                                     <div className="w-full space-y-1">
                                         <div className="text-base-content">/errors</div>
-                                        <div className="h-7 rounded-sm w-[90%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
+                                        <div className="h-6 rounded-sm w-[90%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
                                     <p className="w-12 text-right mb-1">800</p>
                                 </div>
                                 <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
                                     <div className="w-full space-y-1">
                                         <div className="text-base-content">/errors</div>
-                                        <div className="h-7 rounded-sm w-[80%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
+                                        <div className="h-6 rounded-sm w-[80%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
                                     <p className="w-12 text-right mb-1">600</p>
                                 </div>
                                 <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
                                     <div className="w-full space-y-1">
                                         <div className="text-base-content">/errors</div>
-                                        <div className="h-7 rounded-sm w-[70%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
+                                        <div className="h-6 rounded-sm w-[70%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
                                     <p className="w-12 text-right mb-1">400</p>
                                 </div>
                                 <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
                                     <div className="w-full space-y-1">
                                         <div className="text-base-content">/errors</div>
-                                        <div className="h-7 rounded-sm w-[10%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
+                                        <div className="h-6 rounded-sm w-[10%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
                                     <p className="w-12 text-right mb-1">300</p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="lg:col-span-1">
-                <div className="card bg-base-100 border border-base-300">
-                    <div className="card-body p-4 lg:p-6">
-                        <div className="card-title justify-between">
-                            <div>Device & Browser</div>
-                            <div role="tablist" className="tabs tabs-border tabs-sm">
-                                <a role="tab" className="tab px-4 tab-active">
-                                    <span className="icon-[lucide--monitor-smartphone] size-4"></span>
-                                </a>
-                                <a role="tab" className="tab px-4">
-                                    <span className="icon-[lucide--globe] size-4"></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div className="flex justify-between">
-                            <div></div>
-                            <div className='h-52 lg:h-105 w-1/2'>
-                                <ResponsiveContainer >
-                                    <PieChart data={data01}>
-                                        <Pie
-                                            dataKey="value"
-                                            cx="50%" cy="50%"
-                                            outerRadius="100%"
-                                            innerRadius="70%"
-                                            fill="var(--color-primary)"
-                                            stroke="var(--color-base-100)"
-                                            strokeWidth={3}
-                                            isAnimationActive={false}
-                                            labelLine={false}
-                                            minAngle={15}
-                                        >
-                                            {(() => {
-                                                const n = data01.length;
-                                                return data01.map((entry, index) => {
-                                                    // step from 1 → 0.3
-                                                    const alpha = 1 - (index / (n - 1)) * 0.7;
-                                                    return <Cell key={index} fillOpacity={alpha} />;
-                                                });
-                                            })()}
-                                        </Pie>
-                                    </PieChart>
-                                </ResponsiveContainer>
                             </div>
                         </div>
                     </div>

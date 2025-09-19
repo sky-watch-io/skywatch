@@ -53,7 +53,7 @@ export default function SWAreaChart({
                         tickFormatter={XTickFormatter}
                         stroke="var(--color-base-content)"
                         strokeWidth={1}
-                        tick={{ fill: "var(--color-base-content)", fontSize: 14 }}
+                        tick={{ fill: "var(--color-base-content)", fontSize: 12 }}
                         tickMargin={8}
                         tickSize={12}
                         tickCount={5}

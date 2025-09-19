@@ -17,7 +17,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
                         <ThemeDropdown />
                     </div>
                 </div>
-                <div className="bg-base-200 p-2 lg:p-5 flex-1">
+                <div className="bg-base-300 p-2 lg:p-5 flex-1">
                     {children}
                 </div>
             </div>
