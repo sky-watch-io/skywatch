@@ -98,7 +98,7 @@ export default function DashboardPage() {
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="flex justify-between gap-2">
                             <div className="stats lg:hidden shrink-0">
-                                <div className="stat px-0 pt-0">
+                                <div className="stat px-2 pt-0">
                                     <div className="stat-title">Visitors</div>
                                     <div className="stat-value">89,400</div>
                                     <div className="stat-desc font-semibold">
@@ -109,12 +109,12 @@ export default function DashboardPage() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="w-45 text-xs flex flex-col gap-1 text-base-content/60 pt-0.5 text-end">
-                                <div className="font-semibold flex gap-1 justify-end items-center">
-                                    <span className="icon-[lucide--brain-circuit] size-4 text-secondary"></span>
+                            <div className="w-1/2 text-xs flex flex-col gap-2 text-base-content/60 pt-0.5 text-end">
+                                <div className="font-semibold flex gap-1 justify-end items-center text-secondary">
+                                    <span className="icon-[lucide--brain-circuit] size-4"></span>
                                     <div>AI Insight</div>
                                 </div>
-                                <div className="">
+                                <div className="text-[10px]">
                                     Visitors peak midweek (Wednesdays) with 35% higher traffic, while weekends consistently show a 20% drop.
                                 </div>
                             </div>
@@ -148,7 +148,7 @@ export default function DashboardPage() {
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="stats lg:hidden">
-                            <div className="stat px-0 pt-0">
+                            <div className="stat px-2 pt-0">
                                 <div className="stat-title">Visits</div>
                                 <div className="stat-value">89,400</div>
                                 <div className="stat-desc font-semibold">
@@ -188,7 +188,7 @@ export default function DashboardPage() {
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="stats lg:hidden">
-                            <div className="stat px-0 pt-0">
+                            <div className="stat px-2 pt-0">
                                 <div className="stat-title">Page Views</div>
                                 <div className="stat-value">89,400</div>
                                 <div className="stat-desc font-semibold">
@@ -228,7 +228,7 @@ export default function DashboardPage() {
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="stats lg:hidden">
-                            <div className="stat px-0 pt-0">
+                            <div className="stat px-2 pt-0">
                                 <div className="stat-title">Average Session Duration</div>
                                 <div className="stat-value">89,400</div>
                                 <div className="stat-desc font-semibold">
@@ -268,7 +268,7 @@ export default function DashboardPage() {
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="stats lg:hidden">
-                            <div className="stat px-0 pt-0">
+                            <div className="stat px-2 pt-0">
                                 <div className="stat-title">Pages per visit</div>
                                 <div className="stat-value">3</div>
                                 <div className="stat-desc font-semibold">
@@ -308,7 +308,7 @@ export default function DashboardPage() {
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="stats lg:hidden">
-                            <div className="stat px-0 pt-0">
+                            <div className="stat px-2 pt-0">
                                 <div className="stat-title">Bounce Rate</div>
                                 <div className="stat-value">29%</div>
                                 <div className="stat-desc font-semibold">
