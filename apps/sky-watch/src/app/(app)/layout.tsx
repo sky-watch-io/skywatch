@@ -1,5 +1,6 @@
 import SideNav from "@/app/components/SideNav"
 import ThemeDropdown from "@/app/components/ThemeDropdown"
+import Calendar from "@/app/components/Calendar"
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -8,10 +9,13 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             <SideNav />
             <div className="drawer-content flex flex-col">
                 <div className="h-16 border-b border-base-300 flex items-center justify-between px-5">
-                    <div>
+                    <div className="flex gap-2 items-center">
                         <label htmlFor="side-nav-drawer-toggle-checkbox" className="btn btn-sm btn-square btn-ghost drawer-button lg:hidden">
                             <span className="icon-[lucide--panel-left-open] size-5"></span>
                         </label>
+                    </div>
+                    <div className="place-self-center">
+                        <Calendar />
                     </div>
                     <div>
                         <ThemeDropdown />

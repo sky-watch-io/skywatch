@@ -324,7 +324,7 @@ export default function DashboardPage() {
                                         <div key={name} className="text-sm flex gap-2 items-center">
                                             <div className="size-4 rounded bg-primary" style={{ opacity: alpha }}></div>
                                             <div>{name}</div>
-                                            <div className="font-semibold">{value}</div>
+                                            <div className="font-semibold ml-auto">{value}</div>
                                         </div>
                                     ))}
                                 </div>
