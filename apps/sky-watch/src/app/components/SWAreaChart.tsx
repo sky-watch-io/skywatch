@@ -30,12 +30,17 @@ export default function SWAreaChart({
                             <stop offset="98%" stopColor="white" stopOpacity={0} />
                         </linearGradient>
                     </defs>
+                    {
+                        TopTooltip && (
+                            <Tooltip content={<TopTooltip />} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 1.75 }} position={{ y: 18 }} />
+                        )
+                    }
                     {/* {
                         TopTooltip && (
                             <Tooltip content={<TopTooltip />} position={{ y: 18 }} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 1.75 }} />
                         )
-                    }
-                    {
+                    } */}
+                    {/* {
                         BottomTooltip && (
                             <Tooltip content={<BottomTooltip />} isAnimationActive={false} position={{ y: 340 }} cursor={false} />
                         )
@@ -78,7 +83,8 @@ export default function SWAreaChart({
                         stroke="var(--color-primary)"
                         fill="url(#areaGradient)"
                         isAnimationActive={false}
-                        activeDot={{ strokeWidth: 0 }}
+                        activeDot={{ strokeWidth: 0, fill: "var(--color-accent)" }}
+                        dot={true}
                     />
                 </AreaChart>
             </ResponsiveContainer>

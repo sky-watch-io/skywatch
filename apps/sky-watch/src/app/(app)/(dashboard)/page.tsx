@@ -35,7 +35,7 @@ const TopTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
         const date = new Date(payload[0].payload.timestamp);
         return (
-            <div className="border-2 border-primary bg-base-100 rounded px-3 py-1 transform -translate-x-1/2 -translate-y-full text-sm">
+            <div className="border-2 border-primary bg-base-100 rounded px-3 py-1 transform -translate-y-full text-sm">
                 {format(date, "EEE, dd MMM")}: <strong>{payload[0].value} visitors</strong>
             </div>
         );
