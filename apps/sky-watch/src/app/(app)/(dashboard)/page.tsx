@@ -12,7 +12,7 @@ const generateTimeSeriesData = (days: number = 14) => {
         day.setHours(0, 0, 0, 0);
         day.setDate(day.getDate() - i);
 
-        const total = faker.number.int({ min: 300, max: 10000 });
+        const total = faker.number.int({ min: 300, max: 1500 });
 
         data.push({
             timestamp: day.getTime(),
@@ -36,7 +36,10 @@ const TopTooltip = ({ active, payload }: any) => {
         const date = new Date(payload[0].payload.timestamp);
         return (
             <div className="border-2 border-primary bg-base-100 rounded px-3 py-1 transform -translate-y-full text-xs lg:text-sm">
-                {format(date, "EEE, dd MMM")}: <strong>{payload[0].value} visitors</strong>
+                {format(date, "EEE, dd MMM")}: <strong>{payload[0].value.toLocaleString('en', {
+                    notation: "compact",
+                    maximumFractionDigits: 1,
+                })} visitors</strong>
             </div>
         );
     }
@@ -95,7 +98,7 @@ export default function DashboardPage() {
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="flex justify-between gap-2">
                             <div className="stats lg:hidden shrink-0">
-                                <div className="stat px-2 pt-0">
+                                <div className="stat px-0 pt-0">
                                     <div className="stat-title">Visitors</div>
                                     <div className="stat-value">89,400</div>
                                     <div className="stat-desc font-semibold">
@@ -118,8 +121,11 @@ export default function DashboardPage() {
                         </div>
                         <SWAreaChart
                             data={data1}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
-                            // YTickFormatter={((visitors: number) => (visitors / 1000).toString() + "K")}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
+                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                                notation: "compact",
+                                maximumFractionDigits: 1,
+                            }))}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -142,7 +148,7 @@ export default function DashboardPage() {
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="stats lg:hidden">
-                            <div className="stat px-2 pt-0">
+                            <div className="stat px-0 pt-0">
                                 <div className="stat-title">Visits</div>
                                 <div className="stat-value">89,400</div>
                                 <div className="stat-desc font-semibold">
@@ -156,6 +162,10 @@ export default function DashboardPage() {
                         <SWAreaChart
                             data={data2}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
+                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                                notation: "compact",
+                                maximumFractionDigits: 1,
+                            }))}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -178,7 +188,7 @@ export default function DashboardPage() {
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="stats lg:hidden">
-                            <div className="stat px-2 pt-0">
+                            <div className="stat px-0 pt-0">
                                 <div className="stat-title">Page Views</div>
                                 <div className="stat-value">89,400</div>
                                 <div className="stat-desc font-semibold">
@@ -192,6 +202,10 @@ export default function DashboardPage() {
                         <SWAreaChart
                             data={data3}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
+                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                                notation: "compact",
+                                maximumFractionDigits: 1,
+                            }))}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -214,7 +228,7 @@ export default function DashboardPage() {
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="stats lg:hidden">
-                            <div className="stat px-2 pt-0">
+                            <div className="stat px-0 pt-0">
                                 <div className="stat-title">Average Session Duration</div>
                                 <div className="stat-value">89,400</div>
                                 <div className="stat-desc font-semibold">
@@ -228,6 +242,10 @@ export default function DashboardPage() {
                         <SWAreaChart
                             data={data4}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
+                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                                notation: "compact",
+                                maximumFractionDigits: 1,
+                            }))}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -250,7 +268,7 @@ export default function DashboardPage() {
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="stats lg:hidden">
-                            <div className="stat px-2 pt-0">
+                            <div className="stat px-0 pt-0">
                                 <div className="stat-title">Pages per visit</div>
                                 <div className="stat-value">3</div>
                                 <div className="stat-desc font-semibold">
@@ -264,6 +282,10 @@ export default function DashboardPage() {
                         <SWAreaChart
                             data={data5}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
+                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                                notation: "compact",
+                                maximumFractionDigits: 1,
+                            }))}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -286,7 +308,7 @@ export default function DashboardPage() {
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
                         <div className="stats lg:hidden">
-                            <div className="stat px-2 pt-0">
+                            <div className="stat px-0 pt-0">
                                 <div className="stat-title">Bounce Rate</div>
                                 <div className="stat-value">29%</div>
                                 <div className="stat-desc font-semibold">
@@ -300,6 +322,10 @@ export default function DashboardPage() {
                         <SWAreaChart
                             data={data6}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
+                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                                notation: "compact",
+                                maximumFractionDigits: 1,
+                            }))}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />

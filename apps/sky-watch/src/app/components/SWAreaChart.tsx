@@ -56,26 +56,26 @@ export default function SWAreaChart({
                         type="number"
                         domain={['dataMin', 'dataMax']}
                         tickFormatter={XTickFormatter}
-                        stroke="var(--color-base-content)"
-                        strokeWidth={1}
-                        tick={{ fill: "var(--color-base-content)", fontSize: 12 }}
-                        tickMargin={8}
-                        tickSize={12}
-                        tickCount={5}
                         interval="preserveStartEnd"
+                        stroke="var(--color-base-content)"
+                        tick={{ fill: "var(--color-base-content)", fontSize: 10 }}
+                        tickMargin={4}
+                        tickSize={8}
+                        tickCount={5}
                     />
-                    {/* <YAxis
+                    <YAxis
                         dataKey="total"
                         type="number"
                         domain={[0, 'auto']}
                         tickFormatter={YTickFormatter}
                         interval="preserveStartEnd"
-                        tick={{ fill: "var(--color-base-content)", fontSize: 14 }}
-                        tickCount={5}
-                        tickLine={false}
-                        axisLine={false}
                         stroke="var(--color-base-content)"
-                    /> */}
+                        tick={{ fill: "var(--color-base-content)", fontSize: 10 }}
+                        tickMargin={4}
+                        tickSize={8}
+                        tickCount={5}
+                        width={35}
+                    />
                     <Area
                         type="monotone"
                         dataKey="total"
