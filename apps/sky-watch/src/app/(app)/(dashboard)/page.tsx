@@ -120,7 +120,7 @@ export default function DashboardPage() {
                             </div>
                         </div>
                         <SWAreaChart
-                            data={data1}
+                            data={data6}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
                             YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
                                 notation: "compact",
@@ -147,21 +147,32 @@ export default function DashboardPage() {
                         </div>
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
-                        <div className="stats lg:hidden">
-                            <div className="stat px-2 pt-0">
-                                <div className="stat-title">Visits</div>
-                                <div className="stat-value">89,400</div>
-                                <div className="stat-desc font-semibold">
-                                    <div className="flex gap-2 text-error">
-                                        <span className="icon-[lucide--trending-up] size-5"></span>
-                                        <span>21%</span>
+                        <div className="flex justify-between gap-2">
+                            <div className="stats lg:hidden shrink-0">
+                                <div className="stat px-2 pt-0">
+                                    <div className="stat-title">Visits</div>
+                                    <div className="stat-value">89,400</div>
+                                    <div className="stat-desc font-semibold">
+                                        <div className="flex gap-2 text-success">
+                                            <span className="icon-[lucide--trending-up] size-5"></span>
+                                            <span>21%</span>
+                                        </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div className="w-1/2 text-xs flex flex-col gap-2 text-base-content pt-0.5 text-end">
+                                <div className="font-semibold flex gap-1 justify-end items-center text-secondary">
+                                    <span className="icon-[lucide--brain-circuit] size-4"></span>
+                                    <div>AI Insight</div>
+                                </div>
+                                <div className="text-[10px]">
+                                    Visitors peak midweek (Wednesdays) with 35% higher traffic, while weekends consistently show a 20% drop.
                                 </div>
                             </div>
                         </div>
                         <SWAreaChart
-                            data={data2}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
+                            data={data5}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
                             YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
                                 notation: "compact",
                                 maximumFractionDigits: 1,
@@ -187,21 +198,32 @@ export default function DashboardPage() {
                         </div>
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
-                        <div className="stats lg:hidden">
-                            <div className="stat px-2 pt-0">
-                                <div className="stat-title">Page Views</div>
-                                <div className="stat-value">89,400</div>
-                                <div className="stat-desc font-semibold">
-                                    <div className="flex gap-2 text-error">
-                                        <span className="icon-[lucide--trending-up] size-5"></span>
-                                        <span>21%</span>
+                        <div className="flex justify-between gap-2">
+                            <div className="stats lg:hidden shrink-0">
+                                <div className="stat px-2 pt-0">
+                                    <div className="stat-title">Page views</div>
+                                    <div className="stat-value">89,400</div>
+                                    <div className="stat-desc font-semibold">
+                                        <div className="flex gap-2 text-success">
+                                            <span className="icon-[lucide--trending-up] size-5"></span>
+                                            <span>21%</span>
+                                        </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div className="w-1/2 text-xs flex flex-col gap-2 text-base-content pt-0.5 text-end">
+                                <div className="font-semibold flex gap-1 justify-end items-center text-secondary">
+                                    <span className="icon-[lucide--brain-circuit] size-4"></span>
+                                    <div>AI Insight</div>
+                                </div>
+                                <div className="text-[10px]">
+                                    Visitors peak midweek (Wednesdays) with 35% higher traffic, while weekends consistently show a 20% drop.
                                 </div>
                             </div>
                         </div>
                         <SWAreaChart
-                            data={data3}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
+                            data={data1}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
                             YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
                                 notation: "compact",
                                 maximumFractionDigits: 1,
@@ -227,21 +249,32 @@ export default function DashboardPage() {
                         </div>
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
-                        <div className="stats lg:hidden">
-                            <div className="stat px-2 pt-0">
-                                <div className="stat-title">Average Session Duration</div>
-                                <div className="stat-value">89,400</div>
-                                <div className="stat-desc font-semibold">
-                                    <div className="flex gap-2 text-error">
-                                        <span className="icon-[lucide--trending-up] size-5"></span>
-                                        <span>21%</span>
+                        <div className="flex justify-between gap-2">
+                            <div className="stats lg:hidden shrink-0">
+                                <div className="stat px-2 pt-0">
+                                    <div className="stat-title">Average session duration</div>
+                                    <div className="stat-value">89,400</div>
+                                    <div className="stat-desc font-semibold">
+                                        <div className="flex gap-2 text-success">
+                                            <span className="icon-[lucide--trending-up] size-5"></span>
+                                            <span>21%</span>
+                                        </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div className="w-1/2 text-xs flex flex-col gap-2 text-base-content pt-0.5 text-end">
+                                <div className="font-semibold flex gap-1 justify-end items-center text-secondary">
+                                    <span className="icon-[lucide--brain-circuit] size-4"></span>
+                                    <div>AI Insight</div>
+                                </div>
+                                <div className="text-[10px]">
+                                    Visitors peak midweek (Wednesdays) with 35% higher traffic, while weekends consistently show a 20% drop.
                                 </div>
                             </div>
                         </div>
                         <SWAreaChart
-                            data={data4}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
+                            data={data2}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
                             YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
                                 notation: "compact",
                                 maximumFractionDigits: 1,
@@ -267,21 +300,32 @@ export default function DashboardPage() {
                         </div>
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
-                        <div className="stats lg:hidden">
-                            <div className="stat px-2 pt-0">
-                                <div className="stat-title">Pages per visit</div>
-                                <div className="stat-value">3</div>
-                                <div className="stat-desc font-semibold">
-                                    <div className="flex gap-2 text-success">
-                                        <span className="icon-[lucide--trending-up] size-5"></span>
-                                        <span>70%</span>
+                        <div className="flex justify-between gap-2">
+                            <div className="stats lg:hidden shrink-0">
+                                <div className="stat px-2 pt-0">
+                                    <div className="stat-title">Pages per visit</div>
+                                    <div className="stat-value">89,400</div>
+                                    <div className="stat-desc font-semibold">
+                                        <div className="flex gap-2 text-success">
+                                            <span className="icon-[lucide--trending-up] size-5"></span>
+                                            <span>21%</span>
+                                        </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div className="w-1/2 text-xs flex flex-col gap-2 text-base-content pt-0.5 text-end">
+                                <div className="font-semibold flex gap-1 justify-end items-center text-secondary">
+                                    <span className="icon-[lucide--brain-circuit] size-4"></span>
+                                    <div>AI Insight</div>
+                                </div>
+                                <div className="text-[10px]">
+                                    Visitors peak midweek (Wednesdays) with 35% higher traffic, while weekends consistently show a 20% drop.
                                 </div>
                             </div>
                         </div>
                         <SWAreaChart
-                            data={data5}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
+                            data={data3}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
                             YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
                                 notation: "compact",
                                 maximumFractionDigits: 1,
@@ -307,21 +351,32 @@ export default function DashboardPage() {
                         </div>
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
-                        <div className="stats lg:hidden">
-                            <div className="stat px-2 pt-0">
-                                <div className="stat-title">Bounce Rate</div>
-                                <div className="stat-value">29%</div>
-                                <div className="stat-desc font-semibold">
-                                    <div className="flex gap-2 text-success">
-                                        <span className="icon-[lucide--trending-down] size-5"></span>
-                                        <span>80%</span>
+                        <div className="flex justify-between gap-2">
+                            <div className="stats lg:hidden shrink-0">
+                                <div className="stat px-2 pt-0">
+                                    <div className="stat-title">Bounce rate</div>
+                                    <div className="stat-value">89,400</div>
+                                    <div className="stat-desc font-semibold">
+                                        <div className="flex gap-2 text-success">
+                                            <span className="icon-[lucide--trending-up] size-5"></span>
+                                            <span>21%</span>
+                                        </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div className="w-1/2 text-xs flex flex-col gap-2 text-base-content pt-0.5 text-end">
+                                <div className="font-semibold flex gap-1 justify-end items-center text-secondary">
+                                    <span className="icon-[lucide--brain-circuit] size-4"></span>
+                                    <div>AI Insight</div>
+                                </div>
+                                <div className="text-[10px]">
+                                    Visitors peak midweek (Wednesdays) with 35% higher traffic, while weekends consistently show a 20% drop.
                                 </div>
                             </div>
                         </div>
                         <SWAreaChart
-                            data={data6}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
+                            data={data4}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
                             YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
                                 notation: "compact",
                                 maximumFractionDigits: 1,
