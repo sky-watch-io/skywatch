@@ -32,7 +32,7 @@ export default function SWAreaChart({
                     </defs>
                     {
                         TopTooltip && (
-                            <Tooltip content={<TopTooltip />} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 1.75 }} position={{ y: 18 }} />
+                            <Tooltip content={<TopTooltip />} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 2 }} position={{ y: 18 }} />
                         )
                     }
                     {/* {
