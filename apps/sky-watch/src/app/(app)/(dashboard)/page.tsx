@@ -2,7 +2,7 @@
 import SWAreaChart from "@/app/components/SWAreaChart";
 import { faker } from "@faker-js/faker";
 import { format, formatDistanceToNowStrict } from "date-fns";
-import { Pie, PieChart, ResponsiveContainer, PieLabelRenderProps } from "recharts";
+import { Pie, PieChart, ResponsiveContainer, PieLabelRenderProps, Cell } from "recharts";
 
 const generateTimeSeriesData = () => {
     const data = [];
@@ -67,7 +67,8 @@ const BottomTooltip = ({ active, payload }: any) => {
 const data01 = [
     { name: 'Desktop', value: 4000 },
     { name: 'Mobile', value: 1500 },
-    { name: 'Tablet', value: 20 }
+    { name: 'Tablet', value: 500 },
+    { name: 'TV', value: 300 }
 ];
 
 
@@ -107,7 +108,7 @@ export default function DashboardPage() {
                         </div>
                         <SWAreaChart
                             data={data1}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
                             // YTickFormatter={((visitors: number) => (visitors / 1000).toString() + "K")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
@@ -144,7 +145,7 @@ export default function DashboardPage() {
                         </div>
                         <SWAreaChart
                             data={data2}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -180,7 +181,7 @@ export default function DashboardPage() {
                         </div>
                         <SWAreaChart
                             data={data3}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -216,7 +217,7 @@ export default function DashboardPage() {
                         </div>
                         <SWAreaChart
                             data={data4}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -252,7 +253,7 @@ export default function DashboardPage() {
                         </div>
                         <SWAreaChart
                             data={data5}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -288,7 +289,7 @@ export default function DashboardPage() {
                         </div>
                         <SWAreaChart
                             data={data6}
-                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, ha")}
+                            XTickFormatter={(ts: number) => format(new Date(ts), "MMM d, h a")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -413,53 +414,32 @@ export default function DashboardPage() {
                                 </a>
                             </div>
                         </div>
-                        <div>
-                            <div className='h-52 lg:h-105'>
+                        <div className="flex justify-between">
+                            <div></div>
+                            <div className='h-52 lg:h-105 w-1/2'>
                                 <ResponsiveContainer >
                                     <PieChart data={data01}>
                                         <Pie
                                             dataKey="value"
                                             cx="50%" cy="50%"
-                                            innerRadius="50%"
+                                            outerRadius="100%"
+                                            innerRadius="70%"
                                             fill="var(--color-primary)"
-                                            fillOpacity={0.95}
                                             stroke="var(--color-base-100)"
-                                            paddingAngle={4} isAnimationActive={false}
+                                            strokeWidth={3}
+                                            isAnimationActive={false}
                                             labelLine={false}
                                             minAngle={15}
-                                            label={({ cx, cy, midAngle, innerRadius, outerRadius, name, value }: PieLabelRenderProps) => {
-                                                const RADIAN = Math.PI / 180;
-                                                const radius = (outerRadius as number) + 10;
-                                                const x = (cx as number) + radius * Math.cos(-(midAngle as number) * RADIAN);
-                                                const y = (cy as number) + radius * Math.sin(-(midAngle as number) * RADIAN);
-
-                                                return (
-                                                    <>
-                                                        {/* Value inside */}
-                                                        <text
-                                                            x={(cx as number) + ((innerRadius as number) + ((outerRadius as number) - (innerRadius as number)) / 2) * Math.cos(-(midAngle as number) * RADIAN)}
-                                                            y={(cy as number) + ((innerRadius as number) + ((outerRadius as number) - (innerRadius as number)) / 2) * Math.sin(-(midAngle as number) * RADIAN)}
-                                                            fill="var(--color-primary-content)"
-                                                            textAnchor="middle"
-                                                            dominantBaseline="central"
-                                                        >
-                                                            {value as React.ReactNode}
-                                                        </text>
-
-                                                        {/* Name outside */}
-                                                        <text
-                                                            x={x}
-                                                            y={y}
-                                                            fill="var(--color-base-content)"
-                                                            textAnchor={x > (cx as number) ? "start" : "end"}
-                                                            dominantBaseline="central"
-                                                        >
-                                                            {name}
-                                                        </text>
-                                                    </>
-                                                );
-                                            }}
-                                        />
+                                        >
+                                            {(() => {
+                                                const n = data01.length;
+                                                return data01.map((entry, index) => {
+                                                    // step from 1 → 0.3
+                                                    const alpha = 1 - (index / (n - 1)) * 0.7;
+                                                    return <Cell key={index} fillOpacity={alpha} />;
+                                                });
+                                            })()}
+                                        </Pie>
                                     </PieChart>
                                 </ResponsiveContainer>
                             </div>
