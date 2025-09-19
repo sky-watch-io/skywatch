@@ -35,7 +35,7 @@ export default function Calendar() {
     };
     return (
         <>
-            <button popoverTarget="rdp-popover" className="btn btn-sm btn-primary btn-dash" style={{ anchorName: "--rdp" } as CSSProperties}>
+            <button popoverTarget="rdp-popover" className="btn btn-sm btn-primary btn-soft" style={{ anchorName: "--rdp" } as CSSProperties}>
                 <span className="icon-[lucide--calendar-days] size-4"></span>
                 <div>{formatRange(range?.from, range?.to)}</div>
             </button>
