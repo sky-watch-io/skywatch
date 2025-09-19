@@ -93,13 +93,15 @@ export default function DashboardPage() {
                         </div>
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
-                        <div className="stat lg:hidden px-2 pt-0">
-                            <div className="stat-title">Visitors</div>
-                            <div className="stat-value">89,400</div>
-                            <div className="stat-desc font-semibold">
-                                <div className="flex gap-2 text-success">
-                                    <span className="icon-[lucide--trending-up] size-5"></span>
-                                    <span>21%</span>
+                        <div className="stats lg:hidden">
+                            <div className="stat px-2 pt-0">
+                                <div className="stat-title">Visitors</div>
+                                <div className="stat-value">89,400</div>
+                                <div className="stat-desc font-semibold">
+                                    <div className="flex gap-2 text-success">
+                                        <span className="icon-[lucide--trending-up] size-5"></span>
+                                        <span>21%</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -128,13 +130,15 @@ export default function DashboardPage() {
                         </div>
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
-                        <div className="stat lg:hidden px-2 pt-0">
-                            <div className="stat-title">Visits</div>
-                            <div className="stat-value">89,400</div>
-                            <div className="stat-desc font-semibold">
-                                <div className="flex gap-2 text-error">
-                                    <span className="icon-[lucide--trending-up] size-5"></span>
-                                    <span>21%</span>
+                        <div className="stats lg:hidden">
+                            <div className="stat px-2 pt-0">
+                                <div className="stat-title">Visits</div>
+                                <div className="stat-value">89,400</div>
+                                <div className="stat-desc font-semibold">
+                                    <div className="flex gap-2 text-error">
+                                        <span className="icon-[lucide--trending-up] size-5"></span>
+                                        <span>21%</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -162,13 +166,15 @@ export default function DashboardPage() {
                         </div>
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
-                        <div className="stat lg:hidden px-2 pt-0">
-                            <div className="stat-title">Page Views</div>
-                            <div className="stat-value">89,400</div>
-                            <div className="stat-desc font-semibold">
-                                <div className="flex gap-2 text-error">
-                                    <span className="icon-[lucide--trending-up] size-5"></span>
-                                    <span>21%</span>
+                        <div className="stats lg:hidden">
+                            <div className="stat px-2 pt-0">
+                                <div className="stat-title">Page Views</div>
+                                <div className="stat-value">89,400</div>
+                                <div className="stat-desc font-semibold">
+                                    <div className="flex gap-2 text-error">
+                                        <span className="icon-[lucide--trending-up] size-5"></span>
+                                        <span>21%</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -196,13 +202,15 @@ export default function DashboardPage() {
                         </div>
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
-                        <div className="stat lg:hidden px-2 pt-0">
-                            <div className="stat-title">Average Session Duration</div>
-                            <div className="stat-value">89,400</div>
-                            <div className="stat-desc font-semibold">
-                                <div className="flex gap-2 text-error">
-                                    <span className="icon-[lucide--trending-up] size-5"></span>
-                                    <span>21%</span>
+                        <div className="stats lg:hidden">
+                            <div className="stat px-2 pt-0">
+                                <div className="stat-title">Average Session Duration</div>
+                                <div className="stat-value">89,400</div>
+                                <div className="stat-desc font-semibold">
+                                    <div className="flex gap-2 text-error">
+                                        <span className="icon-[lucide--trending-up] size-5"></span>
+                                        <span>21%</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -230,13 +238,15 @@ export default function DashboardPage() {
                         </div>
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
-                        <div className="stat lg:hidden px-2 pt-0">
-                            <div className="stat-title">Pages per visit</div>
-                            <div className="stat-value">3</div>
-                            <div className="stat-desc font-semibold">
-                                <div className="flex gap-2 text-success">
-                                    <span className="icon-[lucide--trending-up] size-5"></span>
-                                    <span>70%</span>
+                        <div className="stats lg:hidden">
+                            <div className="stat px-2 pt-0">
+                                <div className="stat-title">Pages per visit</div>
+                                <div className="stat-value">3</div>
+                                <div className="stat-desc font-semibold">
+                                    <div className="flex gap-2 text-success">
+                                        <span className="icon-[lucide--trending-up] size-5"></span>
+                                        <span>70%</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -264,13 +274,15 @@ export default function DashboardPage() {
                         </div>
                     </label>
                     <div className="tab-content p-4 lg:p-6 bg-base-100 border-base-300">
-                        <div className="stat lg:hidden px-2 pt-0">
-                            <div className="stat-title">Bounce Rate</div>
-                            <div className="stat-value">29%</div>
-                            <div className="stat-desc font-semibold">
-                                <div className="flex gap-2 text-success">
-                                    <span className="icon-[lucide--trending-down] size-5"></span>
-                                    <span>80%</span>
+                        <div className="stats lg:hidden">
+                            <div className="stat px-2 pt-0">
+                                <div className="stat-title">Bounce Rate</div>
+                                <div className="stat-value">29%</div>
+                                <div className="stat-desc font-semibold">
+                                    <div className="flex gap-2 text-success">
+                                        <span className="icon-[lucide--trending-down] size-5"></span>
+                                        <span>80%</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
