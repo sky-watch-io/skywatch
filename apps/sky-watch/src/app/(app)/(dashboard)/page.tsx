@@ -117,7 +117,7 @@ export default function DashboardPage() {
                         <input type="radio" name="my_tabs_1" />
                         <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--eye] size-5 text-base-content lg:text-inherit"></span>
+                                <span className="icon-[lucide--footprints] size-5 text-base-content lg:text-inherit"></span>
                                 <div className="hidden lg:block">Visits</div>
                             </div>
                             <div className="stat-value hidden lg:block">89,400</div>
@@ -225,7 +225,7 @@ export default function DashboardPage() {
                         <input type="radio" name="my_tabs_1" />
                         <div className="stat px-0">
                             <div className="stat-title justify-center flex items-center gap-2">
-                                <span className="icon-[lucide--layers] size-5 text-base-content lg:text-inherit"></span>
+                                <span className="icon-[lucide--files] size-5 text-base-content lg:text-inherit"></span>
                                 <div className="hidden lg:block">Pages per visit</div>
                             </div>
                             <div className="stat-value hidden lg:block">3</div>
@@ -302,40 +302,45 @@ export default function DashboardPage() {
                             Top Landing Pages
                         </div>
                         <div className="space-y-2">
-                            <div className="flex justify-between">
-                                <div className="">Page</div>
-                                <div className="">Views</div>
+                            <div className="flex justify-between font-medium">
+                                <div>Page</div>
+                                <div>Views</div>
                             </div>
                             <div className="flex flex-col gap-2 font-medium">
-                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-7 rounded-sm w-[100%] bg-primary text-primary-content flex items-center pl-4 text-nowrap group-hover:underline">
-                                        /errors
+                                <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
+                                    <div className="w-full space-y-1">
+                                        <div className="text-base-content">/errors</div>
+                                        <div className="h-7 rounded-sm w-[100%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
-                                    <p className="w-12 text-right">1000</p>
+                                    <p className="w-12 text-right mb-1">1000</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-7 rounded-sm w-[80%] bg-primary text-primary-content flex items-center pl-4 text-nowrap group-hover:underline">
-                                        /errors
+                                <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
+                                    <div className="w-full space-y-1">
+                                        <div className="text-base-content">/errors</div>
+                                        <div className="h-7 rounded-sm w-[90%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
-                                    <p className="w-12 text-right">800</p>
+                                    <p className="w-12 text-right mb-1">800</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-7 rounded-sm w-[60%] bg-primary text-primary-content flex items-center pl-4 text-nowrap group-hover:underline">
-                                        /errors
+                                <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
+                                    <div className="w-full space-y-1">
+                                        <div className="text-base-content">/errors</div>
+                                        <div className="h-7 rounded-sm w-[80%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
-                                    <p className="w-12 text-right">600</p>
+                                    <p className="w-12 text-right mb-1">600</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-7 rounded-sm w-[40%] bg-primary text-primary-content flex items-center pl-4 text-nowrap group-hover:underline">
-                                        /errors
+                                <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
+                                    <div className="w-full space-y-1">
+                                        <div className="text-base-content">/errors</div>
+                                        <div className="h-7 rounded-sm w-[70%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
-                                    <p className="w-12 text-right">400</p>
+                                    <p className="w-12 text-right mb-1">400</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-7 rounded-sm w-[30%] bg-primary text-primary-content flex items-center pl-4 text-nowrap group-hover:underline">
-                                        /errors
+                                <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
+                                    <div className="w-full space-y-1">
+                                        <div className="text-base-content">/errors</div>
+                                        <div className="h-7 rounded-sm w-[10%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
-                                    <p className="w-12 text-right">300</p>
+                                    <p className="w-12 text-right mb-1">300</p>
                                 </div>
                             </div>
                         </div>
@@ -349,40 +354,45 @@ export default function DashboardPage() {
                             Top Exit Pages
                         </div>
                         <div className="space-y-2">
-                            <div className="flex justify-between">
-                                <div className="">Page</div>
-                                <div className="">Views</div>
+                            <div className="flex justify-between font-medium">
+                                <div>Page</div>
+                                <div>Views</div>
                             </div>
                             <div className="flex flex-col gap-2 font-medium">
-                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-7 rounded-sm w-[100%] bg-primary text-primary-content flex items-center pl-4 text-nowrap group-hover:underline">
-                                        /errors
+                                <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
+                                    <div className="w-full space-y-1">
+                                        <div className="text-base-content">/errors</div>
+                                        <div className="h-7 rounded-sm w-[100%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
-                                    <p className="w-12 text-right">10</p>
+                                    <p className="w-12 text-right mb-1">1000</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-7 rounded-sm w-[70%] bg-primary text-primary-content flex items-center pl-4 text-nowrap group-hover:underline">
-                                        /errors
+                                <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
+                                    <div className="w-full space-y-1">
+                                        <div className="text-base-content">/errors</div>
+                                        <div className="h-7 rounded-sm w-[90%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
-                                    <p className="w-12 text-right">10</p>
+                                    <p className="w-12 text-right mb-1">800</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-7 rounded-sm w-[30%] bg-primary text-primary-content flex items-center pl-4 text-nowrap group-hover:underline">
-                                        /errors
+                                <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
+                                    <div className="w-full space-y-1">
+                                        <div className="text-base-content">/errors</div>
+                                        <div className="h-7 rounded-sm w-[80%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
-                                    <p className="w-12 text-right">10</p>
+                                    <p className="w-12 text-right mb-1">600</p>
                                 </div>
-                                <div className="flex items-center justify-between relative gap-4 cursor-pointer group">
-                                    <div className="h-7 rounded-sm w-[20%] bg-primary text-primary-content flex items-center pl-4 text-nowrap group-hover:underline">
-                                        /errors
+                                <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
+                                    <div className="w-full space-y-1">
+                                        <div className="text-base-content">/errors</div>
+                                        <div className="h-7 rounded-sm w-[70%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
-                                    <p className="w-12 text-right">10</p>
+                                    <p className="w-12 text-right mb-1">400</p>
                                 </div>
-                                <div className="flex items-center justify-between gap-4 cursor-pointer group">
-                                    <div className="h-7 rounded-sm w-[10%] bg-primary text-primary-content flex items-center pl-4 text-nowrap group-hover:underline">
-                                        /errors
+                                <div className="flex items-end justify-between relative gap-4 cursor-pointer group">
+                                    <div className="w-full space-y-1">
+                                        <div className="text-base-content">/errors</div>
+                                        <div className="h-7 rounded-sm w-[10%] bg-primary flex items-center pl-4 text-nowrap group-hover:underline"></div>
                                     </div>
-                                    <p className="w-12 text-right">10</p>
+                                    <p className="w-12 text-right mb-1">300</p>
                                 </div>
                             </div>
                         </div>
