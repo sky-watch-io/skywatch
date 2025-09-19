@@ -4,7 +4,10 @@ import { DayPicker, DateRange } from "react-day-picker";
 import { format as formatDate } from "date-fns";
 
 export default function Calendar() {
-    const [range, setRange] = useState<DateRange | undefined>();
+    const initialEnd = new Date();
+    const initialStart = new Date(initialEnd);
+    initialStart.setDate(initialEnd.getDate() - 13);
+    const [range, setRange] = useState<DateRange | undefined>({ from: initialStart, to: initialEnd });
     const now = new Date();
 
     const formatOne = (date: Date) => {
@@ -32,7 +35,7 @@ export default function Calendar() {
     };
     return (
         <>
-            <button popoverTarget="rdp-popover" className="btn btn-sm btn-soft" style={{ anchorName: "--rdp" } as CSSProperties}>
+            <button popoverTarget="rdp-popover" className="btn btn-sm btn-primary btn-dash" style={{ anchorName: "--rdp" } as CSSProperties}>
                 <span className="icon-[lucide--calendar-days] size-4"></span>
                 <div>{formatRange(range?.from, range?.to)}</div>
             </button>
@@ -43,6 +46,7 @@ export default function Calendar() {
                         mode="range"
                         selected={range}
                         onSelect={setRange}
+                        defaultMonth={range?.to ?? new Date()}
                     />
                 </div>
             </div>

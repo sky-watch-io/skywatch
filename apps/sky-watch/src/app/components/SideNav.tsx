@@ -4,7 +4,7 @@ import ProjectsSideNavItem from "@/app/components/ProjectsSideNavItem"
 
 export default function SideNav() {
     return (
-        <div className="drawer-side border-r border-base-300 lg:min-w-100 flex flex-col">
+        <div className="drawer-side border-r border-base-300 lg:min-w-100 flex flex-col z-30">
             <div className="w-full flex-1 lg:h-full bg-base-100 flex flex-col">
                 <div className="h-16 px-6 flex gap-2 items-center justify-center border-b border-base-300 relative shrink-0">
                     <Logo className="size-6" />

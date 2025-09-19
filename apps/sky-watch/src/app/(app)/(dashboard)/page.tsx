@@ -4,26 +4,18 @@ import { faker } from "@faker-js/faker";
 import { format, formatDistanceToNowStrict } from "date-fns";
 import { Pie, PieChart, ResponsiveContainer, Cell, Label } from "recharts";
 
-const generateTimeSeriesData = () => {
+const generateTimeSeriesData = (days: number = 14) => {
     const data = [];
-    const periods = 30;
 
-    for (let i = periods - 1; i >= 0; i--) {
+    for (let i = days - 1; i >= 0; i--) {
+        const day = new Date();
+        day.setHours(0, 0, 0, 0);
+        day.setDate(day.getDate() - i);
 
-        const baseTotal = faker.number.int({ min: 300, max: 10000 });
-
-
-        const currentDate = new Date(Date.now() - i * 60 * 60 * 1000);
-        const currentHour = currentDate.getHours();
-        const isBusinessHour = currentHour >= 9 && currentHour <= 17;
-        const spikeMultiplier = isBusinessHour
-            ? faker.number.float({ min: 1, max: 1.8 })
-            : 1;
-
-        const total = Math.round(baseTotal * spikeMultiplier);
+        const total = faker.number.int({ min: 300, max: 10000 });
 
         data.push({
-            timestamp: new Date(Date.now() - i * 60 * 60 * 1000).getTime(),
+            timestamp: day.getTime(),
             total,
         });
     }
