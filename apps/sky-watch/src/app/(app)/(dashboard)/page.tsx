@@ -108,7 +108,7 @@ export default function DashboardPage() {
                             </div>
                             <div className="w-45 text-xs flex flex-col gap-1 text-base-content/60 pt-0.5 text-end">
                                 <div className="font-semibold flex gap-1 justify-end items-center">
-                                    <span className="icon-[lucide--brain-circuit] size-4 text-accent"></span>
+                                    <span className="icon-[lucide--brain-circuit] size-4 text-secondary"></span>
                                     <div>AI Insight</div>
                                 </div>
                                 <div className="">
