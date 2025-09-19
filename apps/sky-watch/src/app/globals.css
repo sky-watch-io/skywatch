@@ -12,3 +12,21 @@
   --font-mono: var(--font-noto-sans-mono);
   --font-audiowide: var(--font-audiowide);
 }
+
+.tabs-lift {
+  &>.tab {
+
+    &:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]),
+    &:is(input:checked, label:has(:checked)) {
+      &:before {
+        --radius-end: 0;
+      }
+
+      &+.tab-content {
+        &:last-child {
+          --tabcontent-radius-se: 0;
+        }
+      }
+    }
+  }
+}

@@ -72,7 +72,7 @@ export default function SWAreaChart({
                         stroke="var(--color-base-content)"
                     /> */}
                     <Area
-                        type="linear"
+                        type="monotone"
                         dataKey="total"
                         strokeWidth={2}
                         stroke="var(--color-primary)"
