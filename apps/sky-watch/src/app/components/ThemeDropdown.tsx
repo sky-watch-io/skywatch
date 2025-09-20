@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 
-const LIGHT_THEME = 'retro';
+const LIGHT_THEME = 'nord';
 const DARK_THEME = 'dim';
 
 const ThemeDropdown = () => {

@@ -21,20 +21,20 @@ type SWAreaChartType = {
 export default function SWAreaChart({
     data, XTickFormatter, YTickFormatter, TopTooltip, BottomTooltip
 }: SWAreaChartType) {
-    const [areaType, setAreaType] = useState<'step' | 'monotone'>('monotone');
+    const [areaType, setAreaType] = useState<'step' | 'linear'>('linear');
 
     const toggleAreaType = () => {
-        setAreaType(prev => prev === 'step' ? 'monotone' : 'step');
+        setAreaType(prev => prev === 'step' ? 'linear' : 'step');
     };
 
     return (
         <div className='h-52 lg:h-105 relative'>
             <button
-                className="btn btn-soft btn-secondary btn-circle btn-xs absolute right-0 bottom-10 z-20"
+                className="btn btn-accent btn-dash btn-circle btn-xs absolute right-0 bottom-10 z-20"
                 onClick={toggleAreaType}
-                title={`Switch to ${areaType === 'step' ? 'monotone' : 'step'} chart`}
+                title={`Switch to ${areaType === 'step' ? 'linear' : 'step'} chart`}
             >
-                <span className={`${areaType === 'step' ? 'icon-[carbon--chart-stepper]' : 'icon-[lucide--chart-spline]'}`}></span>
+                <span className={`${areaType === 'step' ? 'icon-[carbon--chart-stepper]' : 'icon-[lucide--chart-line]'}`}></span>
             </button>
             <ResponsiveContainer>
                 <AreaChart data={data} >
@@ -80,7 +80,7 @@ export default function SWAreaChart({
                         interval="preserveStartEnd"
                         stroke="var(--color-base-content)"
                         strokeOpacity={0.6}
-                        tick={{ fill: "var(--color-base-content)", fontSize: 10, opacity: 0.6 }}
+                        tick={{ fill: "var(--color-base-content)", fontSize: 12, opacity: 0.6 }}
                         tickMargin={4}
                         tickSize={4}
                         tickCount={5}
@@ -95,7 +95,7 @@ export default function SWAreaChart({
                         interval="preserveStartEnd"
                         stroke="var(--color-base-content)"
                         strokeOpacity={0.6}
-                        tick={{ fill: "var(--color-base-content)", fontSize: 10, opacity: 0.6 }}
+                        tick={{ fill: "var(--color-base-content)", fontSize: 12, opacity: 0.6 }}
                         tickLine={true}
                         axisLine={true}
                         mirror
@@ -103,25 +103,6 @@ export default function SWAreaChart({
                         tickMargin={2}
                         tickCount={5}
                     />
-                    {/* <YAxis
-                        yAxisId="right"
-                        orientation="right"
-                        dataKey="total"
-                        type="number"
-                        domain={[0, 'auto']}
-                        tickFormatter={YTickFormatter}
-                        interval="preserveStartEnd"
-                        stroke="var(--color-base-content)"
-                        strokeOpacity={0.6}
-                        tick={{ fill: "var(--color-base-content)", fontSize: 10, opacity: 0.6 }}
-                        tickLine={true}
-                        axisLine={true}
-                        mirror
-                        tickSize={4}
-                        tickMargin={2}
-                        tickCount={5}
-                        width={35}
-                    /> */}
                     <Area
                         type={areaType}
                         dataKey="total"

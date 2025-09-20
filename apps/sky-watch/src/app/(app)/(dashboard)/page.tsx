@@ -39,7 +39,7 @@ const TopTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
         const date = new Date(payload[0].payload.timestamp);
         return (
-            <div className="border-1 border-primary bg-base-100 rounded-sm p-1 py-0 transform -translate-y-full text-[10px] lg:text-sm z-30">
+            <div className="border-1 border-primary bg-base-100 rounded-sm p-1 py-0 transform -translate-y-full text-xs lg:text-sm z-30">
                 {format(date, "EEE, dd MMM")}: <strong>{payload[0].value.toLocaleString('en', {
                     notation: "compact",
                     maximumFractionDigits: 1,
@@ -170,6 +170,15 @@ const getTrendIcon = (changeType: string) => {
     }
 };
 
+const getChangeTypeClass = (changeType: string) => {
+    switch (changeType) {
+        case 'success': return 'text-success';
+        case 'error': return 'text-error';
+        case 'warning': return 'text-warning';
+        default: return 'text-base-content';
+    }
+};
+
 // Reusable components
 const StatDisplay = ({ title, value, change, changeType, icon }: any) => (
     <div className="stat px-0">
@@ -178,7 +187,7 @@ const StatDisplay = ({ title, value, change, changeType, icon }: any) => (
             <div className="hidden lg:block">{title}</div>
         </div>
         <div className="stat-value hidden lg:block">{value}</div>
-        <div className={`stat-desc text-${changeType} font-semibold hidden lg:block`}>
+        <div className={`stat-desc ${getChangeTypeClass(changeType)} font-semibold hidden lg:block`}>
             <div className="flex gap-2 justify-center">
                 <span className={`${getTrendIcon(changeType)} size-5`}></span>
                 <span className="font-semibold">{change}</span>
@@ -193,7 +202,7 @@ const MobileStatDisplay = ({ title, value, change, changeType }: any) => (
             <div className="stat-title">{title}</div>
             <div className="stat-value">{value}</div>
             <div className="stat-desc font-semibold">
-                <div className={`flex gap-2 text-${changeType}`}>
+                <div className={`flex gap-2 ${getChangeTypeClass(changeType)}`}>
                     <span className={`${getTrendIcon(changeType)} size-5`}></span>
                     <span>{change}</span>
                 </div>
@@ -204,7 +213,7 @@ const MobileStatDisplay = ({ title, value, change, changeType }: any) => (
 
 const AIInsight = ({ insight }: { insight: string }) => (
     <div className="w-1/2 text-xs flex flex-col gap-2 text-base-content pt-0.5 text-end">
-        <div className="font-semibold flex gap-1 justify-end items-center text-accent">
+        <div className="font-semibold flex gap-1 justify-end items-center text-secondary">
             <span className="icon-[lucide--brain-circuit] size-4"></span>
             <div>AI Insight</div>
         </div>
@@ -251,7 +260,7 @@ const PageListItem = ({ path, views, width }: { path: string; views: number; wid
                 style={{ width }}
             ></div>
         </div>
-        <p className="w-12 text-right mb-1">{views}</p>
+        <p className="w-12 text-right mb-1">{formatNumber(views)}</p>
     </div>
 );
 
