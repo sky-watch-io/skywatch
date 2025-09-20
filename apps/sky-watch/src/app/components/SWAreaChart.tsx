@@ -21,10 +21,10 @@ type SWAreaChartType = {
 export default function SWAreaChart({
     data, XTickFormatter, YTickFormatter, TopTooltip, BottomTooltip
 }: SWAreaChartType) {
-    const [areaType, setAreaType] = useState<'step' | 'linear'>('linear');
+    const [areaType, setAreaType] = useState<'step' | 'monotone'>('monotone');
 
     const toggleAreaType = () => {
-        setAreaType(prev => prev === 'step' ? 'linear' : 'step');
+        setAreaType(prev => prev === 'step' ? 'monotone' : 'step');
     };
 
     return (
@@ -32,9 +32,9 @@ export default function SWAreaChart({
             <button
                 className="btn btn-accent btn-dash btn-circle btn-xs absolute right-0 bottom-10 z-20"
                 onClick={toggleAreaType}
-                title={`Switch to ${areaType === 'step' ? 'linear' : 'step'} chart`}
+                title={`Switch to ${areaType === 'step' ? 'monotone' : 'step'} chart`}
             >
-                <span className={`${areaType === 'step' ? 'icon-[carbon--chart-stepper]' : 'icon-[lucide--chart-line]'}`}></span>
+                <span className={`${areaType === 'step' ? 'icon-[carbon--chart-stepper]' : 'icon-[lucide--chart-spline]'}`}></span>
             </button>
             <ResponsiveContainer>
                 <AreaChart data={data} >
