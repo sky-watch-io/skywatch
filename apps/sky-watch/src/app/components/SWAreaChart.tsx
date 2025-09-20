@@ -32,7 +32,7 @@ export default function SWAreaChart({
                     </defs>
                     {
                         TopTooltip && (
-                            <Tooltip content={<TopTooltip />} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 2 }} position={{ y: 18 }} />
+                            <Tooltip offset={-30} content={<TopTooltip />} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 2 }} position={{ y: 18 }} />
                         )
                     }
                     {/* {
@@ -58,7 +58,8 @@ export default function SWAreaChart({
                         tickFormatter={XTickFormatter}
                         interval="preserveStartEnd"
                         stroke="var(--color-base-content)"
-                        tick={{ fill: "var(--color-base-content)", fontSize: 10 }}
+                        strokeOpacity={0.6}
+                        tick={{ fill: "var(--color-base-content)", fontSize: 10, opacity: 0.6 }}
                         tickMargin={4}
                         tickSize={8}
                         tickCount={5}
@@ -70,9 +71,13 @@ export default function SWAreaChart({
                         tickFormatter={YTickFormatter}
                         interval="preserveStartEnd"
                         stroke="var(--color-base-content)"
-                        tick={{ fill: "var(--color-base-content)", fontSize: 10 }}
-                        tickMargin={4}
-                        tickSize={8}
+                        strokeOpacity={0.6}
+                        tick={{ fill: "var(--color-base-content)", fontSize: 10, opacity: 0.6 }}
+                        tickLine={true}
+                        axisLine={true}
+                        mirror
+                        tickSize={4}
+                        tickMargin={2}
                         tickCount={5}
                         width={35}
                     />
@@ -83,7 +88,7 @@ export default function SWAreaChart({
                         stroke="var(--color-primary)"
                         fill="url(#areaGradient)"
                         isAnimationActive={false}
-                        activeDot={{ strokeWidth: 0, fill: "var(--color-accent)" }}
+                        activeDot={{ fill: "var(--color-accent)" }}
                         dot={true}
                     />
                 </AreaChart>

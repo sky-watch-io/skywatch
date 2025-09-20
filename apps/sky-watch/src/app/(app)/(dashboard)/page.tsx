@@ -122,10 +122,10 @@ export default function DashboardPage() {
                         <SWAreaChart
                             data={data6}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
-                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                            YTickFormatter={((visitors: number) => visitors !== 0 ? visitors.toLocaleString('en', {
                                 notation: "compact",
                                 maximumFractionDigits: 1,
-                            }))}
+                            }) : "")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -173,10 +173,10 @@ export default function DashboardPage() {
                         <SWAreaChart
                             data={data5}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
-                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                            YTickFormatter={((visitors: number) => visitors !== 0 ? visitors.toLocaleString('en', {
                                 notation: "compact",
                                 maximumFractionDigits: 1,
-                            }))}
+                            }) : "")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -224,10 +224,10 @@ export default function DashboardPage() {
                         <SWAreaChart
                             data={data1}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
-                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                            YTickFormatter={((visitors: number) => visitors !== 0 ? visitors.toLocaleString('en', {
                                 notation: "compact",
                                 maximumFractionDigits: 1,
-                            }))}
+                            }) : "")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -275,10 +275,10 @@ export default function DashboardPage() {
                         <SWAreaChart
                             data={data2}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
-                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                            YTickFormatter={((visitors: number) => visitors !== 0 ? visitors.toLocaleString('en', {
                                 notation: "compact",
                                 maximumFractionDigits: 1,
-                            }))}
+                            }) : "")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -326,10 +326,10 @@ export default function DashboardPage() {
                         <SWAreaChart
                             data={data3}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
-                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                            YTickFormatter={((visitors: number) => visitors !== 0 ? visitors.toLocaleString('en', {
                                 notation: "compact",
                                 maximumFractionDigits: 1,
-                            }))}
+                            }) : "")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
@@ -377,10 +377,10 @@ export default function DashboardPage() {
                         <SWAreaChart
                             data={data4}
                             XTickFormatter={(ts: number) => format(new Date(ts), "MMM d")}
-                            YTickFormatter={((visitors: number) => visitors.toLocaleString('en', {
+                            YTickFormatter={((visitors: number) => visitors !== 0 ? visitors.toLocaleString('en', {
                                 notation: "compact",
                                 maximumFractionDigits: 1,
-                            }))}
+                            }) : "")}
                             TopTooltip={TopTooltip}
                             BottomTooltip={BottomTooltip}
                         />
