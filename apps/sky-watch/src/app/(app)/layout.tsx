@@ -8,7 +8,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             <input id="side-nav-drawer-toggle-checkbox" type="checkbox" className="drawer-toggle" />
             <SideNav />
             <div className="drawer-content flex flex-col">
-                <div className="h-16 border-b border-base-300 flex items-center justify-between px-5 fixed left-0 right-0 bg-base-100 z-20 shadow">
+                <div className="h-16 border-b border-base-300 flex items-center justify-between px-5 fixed left-0 right-0 bg-base-100 z-30 shadow">
                     <div className="flex gap-2 items-center">
                         <label htmlFor="side-nav-drawer-toggle-checkbox" className="btn btn-sm btn-square btn-ghost drawer-button lg:hidden">
                             <span className="icon-[lucide--panel-left-open] size-5"></span>

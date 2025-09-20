@@ -235,11 +235,11 @@ const TabContent = ({ config }: { config: any }) => (
 
 // Page list data
 const pageListData = [
-    { path: '/errors', views: 1000, width: '100%' },
-    { path: '/errors', views: 800, width: '90%' },
-    { path: '/errors', views: 600, width: '80%' },
-    { path: '/errors', views: 400, width: '70%' },
-    { path: '/errors', views: 300, width: '10%' },
+    { path: '/', views: 15420, width: '100%' },
+    { path: '/dashboard', views: 12890, width: '85%' },
+    { path: '/analytics', views: 9870, width: '70%' },
+    { path: '/settings', views: 5430, width: '40%' },
+    { path: '/help', views: 3210, width: '25%' },
 ];
 
 const PageListItem = ({ path, views, width }: { path: string; views: number; width: string }) => (

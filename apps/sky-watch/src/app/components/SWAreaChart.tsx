@@ -30,7 +30,7 @@ export default function SWAreaChart({
     return (
         <div className='h-52 lg:h-105 relative'>
             <button
-                className="btn btn-secondary btn-circle btn-xs absolute right-0 bottom-10 z-20"
+                className="btn btn-soft btn-secondary btn-circle btn-xs absolute right-0 bottom-10 z-20"
                 onClick={toggleAreaType}
                 title={`Switch to ${areaType === 'step' ? 'monotone' : 'step'} chart`}
             >
