@@ -100,7 +100,7 @@ export default function DashboardPage() {
                             <div className="stats lg:hidden shrink-0">
                                 <div className="stat px-2 pt-0">
                                     <div className="stat-title">Visitors</div>
-                                    <div className="stat-value">89,400</div>
+                                    <div className="stat-value">23,952</div>
                                     <div className="stat-desc font-semibold">
                                         <div className="flex gap-2 text-success">
                                             <span className="icon-[lucide--trending-up] size-5"></span>
@@ -141,7 +141,7 @@ export default function DashboardPage() {
                             <div className="stat-desc text-error font-semibold hidden lg:block">
                                 <div className="flex gap-2 justify-center">
                                     <span className="icon-[lucide--trending-down] size-5"></span>
-                                    <span className="font-semibold">21%</span>
+                                    <span className="font-semibold">2%</span>
                                 </div>
                             </div>
                         </div>
@@ -153,9 +153,9 @@ export default function DashboardPage() {
                                     <div className="stat-title">Visits</div>
                                     <div className="stat-value">89,400</div>
                                     <div className="stat-desc font-semibold">
-                                        <div className="flex gap-2 text-success">
-                                            <span className="icon-[lucide--trending-up] size-5"></span>
-                                            <span>21%</span>
+                                        <div className="flex gap-2 text-error">
+                                            <span className="icon-[lucide--trending-down] size-5"></span>
+                                            <span>13%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -166,7 +166,7 @@ export default function DashboardPage() {
                                     <div>AI Insight</div>
                                 </div>
                                 <div className="text-[10px]">
-                                    Visitors peak midweek (Wednesdays) with 35% higher traffic, while weekends consistently show a 20% drop.
+                                    ⚡ Visits surge 40% on Mondays, showing strong user interest at the week’s start.
                                 </div>
                             </div>
                         </div>
@@ -202,11 +202,11 @@ export default function DashboardPage() {
                             <div className="stats lg:hidden shrink-0">
                                 <div className="stat px-2 pt-0">
                                     <div className="stat-title">Page views</div>
-                                    <div className="stat-value">89,400</div>
+                                    <div className="stat-value">109,030</div>
                                     <div className="stat-desc font-semibold">
-                                        <div className="flex gap-2 text-success">
-                                            <span className="icon-[lucide--trending-up] size-5"></span>
-                                            <span>21%</span>
+                                        <div className="flex gap-2 text-warning">
+                                            <span className="icon-[lucide--move-horizontal] size-5"></span>
+                                            <span>0%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -217,7 +217,7 @@ export default function DashboardPage() {
                                     <div>AI Insight</div>
                                 </div>
                                 <div className="text-[10px]">
-                                    Visitors peak midweek (Wednesdays) with 35% higher traffic, while weekends consistently show a 20% drop.
+                                    Page views spike 2× higher on product launch days, indicating strong event-driven engagement.
                                 </div>
                             </div>
                         </div>
@@ -253,7 +253,7 @@ export default function DashboardPage() {
                             <div className="stats lg:hidden shrink-0">
                                 <div className="stat px-2 pt-0">
                                     <div className="stat-title">Average session duration</div>
-                                    <div className="stat-value">89,400</div>
+                                    <div className="stat-value">3m 21s</div>
                                     <div className="stat-desc font-semibold">
                                         <div className="flex gap-2 text-success">
                                             <span className="icon-[lucide--trending-up] size-5"></span>
@@ -268,7 +268,7 @@ export default function DashboardPage() {
                                     <div>AI Insight</div>
                                 </div>
                                 <div className="text-[10px]">
-                                    Visitors peak midweek (Wednesdays) with 35% higher traffic, while weekends consistently show a 20% drop.
+                                    Evening sessions last 25% longer, suggesting deeper engagement after work hours.
                                 </div>
                             </div>
                         </div>
@@ -355,11 +355,11 @@ export default function DashboardPage() {
                             <div className="stats lg:hidden shrink-0">
                                 <div className="stat px-2 pt-0">
                                     <div className="stat-title">Bounce rate</div>
-                                    <div className="stat-value">89,400</div>
+                                    <div className="stat-value">67%</div>
                                     <div className="stat-desc font-semibold">
                                         <div className="flex gap-2 text-success">
-                                            <span className="icon-[lucide--trending-up] size-5"></span>
-                                            <span>21%</span>
+                                            <span className="icon-[lucide--trending-down] size-5"></span>
+                                            <span>5%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -370,7 +370,7 @@ export default function DashboardPage() {
                                     <div>AI Insight</div>
                                 </div>
                                 <div className="text-[10px]">
-                                    Visitors peak midweek (Wednesdays) with 35% higher traffic, while weekends consistently show a 20% drop.
+                                    Bounce rate jumped 18% on Sep 10, likely tied to slower mobile load speeds.
                                 </div>
                             </div>
                         </div>
