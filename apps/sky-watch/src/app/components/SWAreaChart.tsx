@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react";
 import {
     AreaChart,
     Area,
@@ -20,8 +21,21 @@ type SWAreaChartType = {
 export default function SWAreaChart({
     data, XTickFormatter, YTickFormatter, TopTooltip, BottomTooltip
 }: SWAreaChartType) {
+    const [areaType, setAreaType] = useState<'step' | 'monotone'>('monotone');
+
+    const toggleAreaType = () => {
+        setAreaType(prev => prev === 'step' ? 'monotone' : 'step');
+    };
+
     return (
-        <div className='h-52 lg:h-105'>
+        <div className='h-52 lg:h-105 relative'>
+            <button
+                className="btn btn-secondary btn-circle btn-xs absolute right-0 bottom-10 z-20"
+                onClick={toggleAreaType}
+                title={`Switch to ${areaType === 'step' ? 'monotone' : 'step'} chart`}
+            >
+                <span className={`${areaType === 'step' ? 'icon-[carbon--chart-stepper]' : 'icon-[lucide--chart-spline]'}`}></span>
+            </button>
             <ResponsiveContainer>
                 <AreaChart data={data} >
                     <defs>
@@ -32,7 +46,12 @@ export default function SWAreaChart({
                     </defs>
                     {
                         TopTooltip && (
-                            <Tooltip offset={-30} content={<TopTooltip />} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 2 }} position={{ y: 18 }} />
+                            <Tooltip
+                                offset={-30} content={<TopTooltip />}
+                                isAnimationActive={false}
+                                cursor={{ stroke: "var(--color-primary)", strokeWidth: 1, strokeDasharray: 4 }}
+                                position={{ y: 14 }}
+                            />
                         )
                     }
                     {/* {
@@ -52,6 +71,8 @@ export default function SWAreaChart({
                         strokeOpacity={0.05}
                     />
                     <XAxis
+                        orientation="bottom"
+                        xAxisId="bottom"
                         dataKey="timestamp"
                         type="number"
                         domain={['dataMin', 'dataMax']}
@@ -61,10 +82,30 @@ export default function SWAreaChart({
                         strokeOpacity={0.6}
                         tick={{ fill: "var(--color-base-content)", fontSize: 10, opacity: 0.6 }}
                         tickMargin={4}
-                        tickSize={8}
+                        tickSize={4}
                         tickCount={5}
                     />
                     <YAxis
+                        yAxisId="left"
+                        orientation="left"
+                        dataKey="total"
+                        type="number"
+                        domain={[0, 'auto']}
+                        tickFormatter={YTickFormatter}
+                        interval="preserveStartEnd"
+                        stroke="var(--color-base-content)"
+                        strokeOpacity={0.6}
+                        tick={{ fill: "var(--color-base-content)", fontSize: 10, opacity: 0.6 }}
+                        tickLine={true}
+                        axisLine={true}
+                        mirror
+                        tickSize={4}
+                        tickMargin={2}
+                        tickCount={5}
+                    />
+                    {/* <YAxis
+                        yAxisId="right"
+                        orientation="right"
                         dataKey="total"
                         type="number"
                         domain={[0, 'auto']}
@@ -80,16 +121,15 @@ export default function SWAreaChart({
                         tickMargin={2}
                         tickCount={5}
                         width={35}
-                    />
+                    /> */}
                     <Area
-                        type="monotone"
+                        type={areaType}
                         dataKey="total"
                         strokeWidth={2}
                         stroke="var(--color-primary)"
                         fill="url(#areaGradient)"
                         isAnimationActive={false}
                         activeDot={{ fill: "var(--color-accent)" }}
-                        dot={true}
                     />
                 </AreaChart>
             </ResponsiveContainer>
