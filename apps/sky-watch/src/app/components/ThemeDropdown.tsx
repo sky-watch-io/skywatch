@@ -1,8 +1,8 @@
 "use client"
 import { useEffect, useState } from "react";
 
-const LIGHT_THEME = 'garden';
-const DARK_THEME = 'forest';
+const LIGHT_THEME = 'light';
+const DARK_THEME = 'dark';
 
 const ThemeDropdown = () => {
     const [theme, setTheme] = useState<'light' | 'dark'>('light');

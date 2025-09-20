@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  themes: garden --default, forest --prefersdark;
+  themes: light --default, dark --prefersdark;
 }
 
 @plugin "@iconify/tailwind4";
