@@ -30,11 +30,11 @@ export default function SWAreaChart({
     return (
         <div className='h-52 lg:h-105 relative'>
             <button
-                className="btn btn-primary btn-dash btn-square btn-xs absolute right-0 bottom-10 z-20"
+                className="btn btn-accent btn-dash btn-square btn-xs absolute right-2 bottom-10 z-20"
                 onClick={toggleAreaType}
                 title={`Switch to ${areaType === 'step' ? 'monotone' : 'step'} chart`}
             >
-                <span className={`${areaType === 'step' ? 'icon-[carbon--chart-stepper]' : 'icon-[lucide--chart-spline] size-4'}`}></span>
+                <span className={`size-3.5 ${areaType === 'step' ? 'icon-[carbon--chart-stepper]' : 'icon-[lucide--chart-spline]'}`}></span>
             </button>
             <ResponsiveContainer>
                 <AreaChart data={data} >

@@ -34,3 +34,17 @@
 .recharts-surface:focus {
   outline: none;
 }
+
+.react-day-picker {
+  & .rdp-selected {
+    .rdp-day_button {
+      color: var(--color-base-100);
+    }
+  }
+}
+
+.react-day-picker {
+  .rdp-month_caption {
+    height: 2.2rem;
+  }
+}

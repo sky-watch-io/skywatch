@@ -1,5 +1,5 @@
 "use client"
-import { useState, CSSProperties } from "react";
+import { useState, CSSProperties, useRef } from "react";
 import { DayPicker, DateRange } from "react-day-picker";
 import { format as formatDate } from "date-fns";
 
@@ -8,6 +8,8 @@ export default function Calendar() {
     const initialStart = new Date(initialEnd);
     initialStart.setDate(initialEnd.getDate() - 27);
     const [range, setRange] = useState<DateRange | undefined>({ from: initialStart, to: initialEnd });
+    const [appliedRange, setAppliedRange] = useState<DateRange | undefined>({ from: initialStart, to: initialEnd });
+    const popoverRef = useRef<HTMLDivElement>(null);
     const now = new Date();
 
     const formatOne = (date: Date) => {
@@ -33,21 +35,41 @@ export default function Calendar() {
         // same non-current year → per rule "show years only if different" -> omit year
         return `${formatDate(from, "MMM d")} - ${formatDate(to, "MMM d")}`;
     };
+
+    const handleApply = () => {
+        if (range && range.from && range.to) {
+            setAppliedRange(range);
+            // Close the popover
+            if (popoverRef.current) {
+                popoverRef.current.hidePopover();
+            }
+        }
+    };
+
+    const isRangeValid = range && range.from && range.to;
     return (
         <>
             <button popoverTarget="rdp-popover" className="btn btn-sm btn-primary btn-soft" style={{ anchorName: "--rdp" } as CSSProperties}>
                 <span className="icon-[lucide--calendar-days] size-4"></span>
-                <div>{formatRange(range?.from, range?.to)}</div>
+                <div>{formatRange(appliedRange?.from, appliedRange?.to)}</div>
             </button>
-            <div popover="auto" id="rdp-popover" className="dropdown dropdown-center top-1" style={{ positionAnchor: "--rdp" } as CSSProperties}>
-                <div className="flex gap-2 bg-base-100 border border-base-300 shadow-md rounded-md">
-                    <DayPicker
-                        className="react-day-picker"
-                        mode="range"
-                        selected={range}
-                        onSelect={setRange}
-                        defaultMonth={range?.to ?? new Date()}
-                    />
+            <div ref={popoverRef} popover="auto" id="rdp-popover" className="dropdown dropdown-center top-1 border-1 border-base-content shadow-md rounded-md bg-base-100" style={{ positionAnchor: "--rdp" } as CSSProperties}>
+                <DayPicker
+                    className="react-day-picker border-0"
+                    mode="range"
+                    selected={range}
+                    onSelect={setRange}
+                    defaultMonth={range?.to ?? new Date()}
+                    disabled={(date) => date > now}
+                />
+                <div className="p-3 flex justify-end">
+                    <button
+                        onClick={handleApply}
+                        disabled={!isRangeValid}
+                        className="btn btn-primary btn-xs"
+                    >
+                        Apply
+                    </button>
                 </div>
             </div>
         </>
