@@ -41,6 +41,9 @@ importers:
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
+      drizzle-orm:
+        specifier: ^0.44.5
+        version: 0.44.5(@neondatabase/serverless@1.0.1)(@types/pg@8.15.5)(kysely@0.28.7)
       kysely:
         specifier: ^0.28.7
         version: 0.28.7
@@ -87,6 +90,9 @@ importers:
       daisyui:
         specifier: ^5.0.54
         version: 5.0.54
+      drizzle-kit:
+        specifier: ^0.31.4
+        version: 0.31.4
       tailwindcss:
         specifier: ^4
         version: 4.1.12
@@ -5061,6 +5067,12 @@ snapshots:
       '@neondatabase/serverless': 1.0.1
       '@types/pg': 8.15.5
       kysely: 0.28.5
+
+  drizzle-orm@0.44.5(@neondatabase/serverless@1.0.1)(@types/pg@8.15.5)(kysely@0.28.7):
+    optionalDependencies:
+      '@neondatabase/serverless': 1.0.1
+      '@types/pg': 8.15.5
+      kysely: 0.28.7
 
   dunder-proto@1.0.1:
     dependencies:

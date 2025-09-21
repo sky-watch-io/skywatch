@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npx @better-auth/cli@latest migrate --yes && next build --turbopack",
+    "build": "npx drizzle-kit migrate && next build --turbopack",
     "start": "next start"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "clsx": "^2.1.1",
     "crypto": "^1.0.1",
     "date-fns": "^4.1.0",
+    "drizzle-orm": "^0.44.5",
     "kysely": "^0.28.7",
     "next": "15.5.2",
     "react": "19.1.0",
@@ -32,6 +33,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "daisyui": "^5.0.54",
+    "drizzle-kit": "^0.31.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

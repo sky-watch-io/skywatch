@@ -14,7 +14,7 @@ export default function SignInPage() {
                 <div className="text-xs md:text-sm text-center">Enter your email below to sign in to your account</div>
                 {
                     state?.message && !pending && (
-                        <div role="alert" className="alert alert-error alert-soft">
+                        <div role="alert" className="alert alert-error">
                             <span>{state.message}</span>
                         </div>
                     )

@@ -17,7 +17,7 @@ export default function SignUpPage() {
                     <div
                         role="alert"
                         className={clsx(
-                            "alert alert-soft",
+                            "alert",
                             {
                                 "alert-error": state?.error,
                                 "alert-success": state?.success,
