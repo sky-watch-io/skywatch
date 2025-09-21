@@ -40,8 +40,8 @@ export default function SWAreaChart({
                 <AreaChart data={data} >
                     <defs>
                         <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="2%" stopColor="var(--color-primary)" stopOpacity={0.3} />
-                            <stop offset="98%" stopColor="white" stopOpacity={0} />
+                            <stop offset="15%" stopColor="var(--color-primary)" stopOpacity={0.3} />
+                            <stop offset="85%" stopColor="var(--color-primary)" stopOpacity={0} />
                         </linearGradient>
                     </defs>
                     {
