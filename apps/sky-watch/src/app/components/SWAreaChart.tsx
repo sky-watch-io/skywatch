@@ -47,7 +47,7 @@ export default function SWAreaChart({
                     {
                         TopTooltip && (
                             <Tooltip
-                                offset={-30} content={<TopTooltip />}
+                                offset={10} content={<TopTooltip />}
                                 isAnimationActive={false}
                                 cursor={{ stroke: "var(--color-primary)", strokeWidth: 1, strokeDasharray: 4 }}
                                 position={{ y: 14 }}
@@ -67,8 +67,8 @@ export default function SWAreaChart({
                     <CartesianGrid
                         horizontal={true}
                         vertical={false}
-                        stroke="var(--color-base-content)"
-                        strokeOpacity={0.05}
+                        stroke="var(--color-base-300)"
+                        strokeOpacity={1}
                     />
                     <XAxis
                         orientation="bottom"
@@ -79,28 +79,10 @@ export default function SWAreaChart({
                         tickFormatter={XTickFormatter}
                         interval="preserveStartEnd"
                         stroke="var(--color-base-content)"
-                        strokeOpacity={0.6}
-                        tick={{ fill: "var(--color-base-content)", fontSize: 12, opacity: 0.6 }}
+                        strokeOpacity={1}
+                        tick={{ fill: "var(--color-base-content)", fontSize: 12, opacity: 1 }}
                         tickMargin={4}
                         tickSize={4}
-                        tickCount={5}
-                    />
-                    <YAxis
-                        yAxisId="left"
-                        orientation="left"
-                        dataKey="total"
-                        type="number"
-                        domain={[0, 'auto']}
-                        tickFormatter={YTickFormatter}
-                        interval="preserveStartEnd"
-                        stroke="var(--color-base-content)"
-                        strokeOpacity={0.6}
-                        tick={{ fill: "var(--color-base-content)", fontSize: 12, opacity: 0.6 }}
-                        tickLine={true}
-                        axisLine={true}
-                        mirror
-                        tickSize={4}
-                        tickMargin={2}
                         tickCount={5}
                     />
                     <Area
@@ -111,6 +93,25 @@ export default function SWAreaChart({
                         fill="url(#areaGradient)"
                         isAnimationActive={false}
                         activeDot={{ fill: "var(--color-accent)" }}
+                        style={{ padding: 10 }}
+                    />
+                    <YAxis
+                        yAxisId="left"
+                        orientation="left"
+                        dataKey="total"
+                        type="number"
+                        domain={[0, 'auto']}
+                        tickFormatter={YTickFormatter}
+                        interval="preserveStartEnd"
+                        stroke="var(--color-base-content)"
+                        strokeOpacity={1}
+                        tick={{ fill: "var(--color-base-content)", fontSize: 12, opacity: 1 }}
+                        tickLine={true}
+                        axisLine={true}
+                        mirror
+                        tickSize={4}
+                        tickMargin={2}
+                        tickCount={5}
                     />
                 </AreaChart>
             </ResponsiveContainer>
