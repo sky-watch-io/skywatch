@@ -35,6 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="SkyWatch" />
+      </head>
       <body
         className={`${notoSans.variable} ${notoSansMono.variable} ${audiowide.variable} antialiased font-sans h-full`}
       >
