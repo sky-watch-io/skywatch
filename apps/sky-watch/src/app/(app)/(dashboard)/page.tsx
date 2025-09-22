@@ -213,7 +213,7 @@ const MobileStatDisplay = ({ title, value, change, changeType }: any) => (
 
 const AIInsight = ({ insight }: { insight: string }) => (
     <div className="w-1/2 text-xs flex flex-col gap-2 text-base-content pt-0.5 text-end">
-        <div className="font-semibold flex gap-1 justify-end items-center text-secondary">
+        <div className="font-semibold flex gap-1 justify-end items-center text-accent">
             <span className="icon-[lucide--brain-circuit] size-4"></span>
             <div>AI Insight</div>
         </div>

@@ -8,6 +8,7 @@ import {
     CartesianGrid,
     XAxis,
     YAxis,
+    Brush
 } from "recharts";
 
 type SWAreaChartType = {
@@ -30,13 +31,13 @@ export default function SWAreaChart({
     return (
         <div className='h-52 lg:h-105 relative'>
             <button
-                className="btn btn-accent btn-dash btn-square btn-xs absolute right-2 bottom-10 z-20"
+                className="btn btn-accent btn-dash btn-circle btn-xs absolute right-2 bottom-10 z-20"
                 onClick={toggleAreaType}
                 title={`Switch to ${areaType === 'step' ? 'monotone' : 'step'} chart`}
             >
                 <span className={`size-3.5 ${areaType === 'step' ? 'icon-[carbon--chart-stepper]' : 'icon-[lucide--chart-spline]'}`}></span>
             </button>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={data} >
                     <defs>
                         <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
@@ -44,16 +45,6 @@ export default function SWAreaChart({
                             <stop offset="85%" stopColor="var(--color-primary)" stopOpacity={0} />
                         </linearGradient>
                     </defs>
-                    {
-                        TopTooltip && (
-                            <Tooltip
-                                offset={10} content={<TopTooltip />}
-                                isAnimationActive={false}
-                                cursor={{ stroke: "var(--color-primary)", strokeWidth: 1, strokeDasharray: 4 }}
-                                position={{ y: 14 }}
-                            />
-                        )
-                    }
                     {/* {
                         TopTooltip && (
                             <Tooltip content={<TopTooltip />} position={{ y: 18 }} isAnimationActive={false} cursor={{ stroke: "var(--color-primary)", strokeWidth: 1.75 }} />
@@ -66,16 +57,27 @@ export default function SWAreaChart({
                     } */}
                     <CartesianGrid
                         horizontal={true}
-                        vertical={false}
+                        vertical={true}
                         stroke="var(--color-base-300)"
+                        strokeDasharray="3 3"
                         strokeOpacity={1}
                     />
+                    {
+                        TopTooltip && (
+                            <Tooltip
+                                offset={10} content={<TopTooltip />}
+                                isAnimationActive={false}
+                                cursor={{ stroke: "var(--color-primary)", strokeWidth: 1, strokeDasharray: 4 }}
+                                position={{ y: 14 }}
+                            />
+                        )
+                    }
                     <XAxis
                         orientation="bottom"
                         xAxisId="bottom"
                         dataKey="timestamp"
                         type="number"
-                        domain={['dataMin', 'dataMax']}
+                        domain={['auto', 'auto']}
                         tickFormatter={XTickFormatter}
                         interval="preserveStartEnd"
                         stroke="var(--color-base-content)"
@@ -93,7 +95,6 @@ export default function SWAreaChart({
                         fill="url(#areaGradient)"
                         isAnimationActive={false}
                         activeDot={{ fill: "var(--color-accent)" }}
-                        style={{ padding: 10 }}
                     />
                     <YAxis
                         yAxisId="left"
@@ -113,6 +114,7 @@ export default function SWAreaChart({
                         tickMargin={2}
                         tickCount={5}
                     />
+                    {/* <Brush /> */}
                 </AreaChart>
             </ResponsiveContainer>
         </div>

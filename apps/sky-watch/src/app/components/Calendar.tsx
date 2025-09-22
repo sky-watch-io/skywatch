@@ -49,7 +49,7 @@ export default function Calendar() {
     const isRangeValid = range && range.from && range.to;
     return (
         <>
-            <button popoverTarget="rdp-popover" className="btn btn-sm btn-primary btn-soft" style={{ anchorName: "--rdp" } as CSSProperties}>
+            <button popoverTarget="rdp-popover" className="btn btn-sm btn-soft" style={{ anchorName: "--rdp" } as CSSProperties}>
                 <span className="icon-[lucide--calendar-days] size-4"></span>
                 <div>{formatRange(appliedRange?.from, appliedRange?.to)}</div>
             </button>
