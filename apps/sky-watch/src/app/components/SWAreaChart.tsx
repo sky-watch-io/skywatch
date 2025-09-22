@@ -77,7 +77,7 @@ export default function SWAreaChart({
                         xAxisId="bottom"
                         dataKey="timestamp"
                         type="number"
-                        domain={['auto', 'auto']}
+                        domain={['dataMin', 'dataMax']}
                         tickFormatter={XTickFormatter}
                         interval="preserveStartEnd"
                         stroke="var(--color-base-content)"
