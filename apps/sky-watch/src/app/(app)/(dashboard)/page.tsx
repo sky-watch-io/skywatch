@@ -5,7 +5,7 @@ import { format, formatDistanceToNowStrict } from "date-fns";
 import { Pie, PieChart, ResponsiveContainer, Cell, Label } from "recharts";
 
 // Data generation utilities
-const generateTimeSeriesData = (days: number = 28) => {
+const generateTimeSeriesData = (days: number = 14) => {
     const data = [];
 
     for (let i = days - 1; i >= 0; i--) {
@@ -13,7 +13,7 @@ const generateTimeSeriesData = (days: number = 28) => {
         day.setHours(0, 0, 0, 0);
         day.setDate(day.getDate() - i);
 
-        const total = faker.number.int({ min: 300, max: 1500 });
+        const total = faker.number.int({ min: 0, max: 15000 });
 
         data.push({
             timestamp: day.getTime(),
@@ -213,7 +213,7 @@ const MobileStatDisplay = ({ title, value, change, changeType }: any) => (
 
 const AIInsight = ({ insight }: { insight: string }) => (
     <div className="w-1/2 text-xs flex flex-col gap-2 text-base-content pt-0.5 text-end">
-        <div className="font-semibold flex gap-1 justify-end items-center text-accent">
+        <div className="font-semibold flex gap-1 justify-end items-center text-secondary">
             <span className="icon-[lucide--brain-circuit] size-4"></span>
             <div>AI Insight</div>
         </div>

@@ -8,7 +8,8 @@ import {
     CartesianGrid,
     XAxis,
     YAxis,
-    Brush
+    Brush,
+    ReferenceLine
 } from "recharts";
 
 type SWAreaChartType = {
@@ -31,7 +32,7 @@ export default function SWAreaChart({
     return (
         <div className='h-52 lg:h-105 relative'>
             <button
-                className="btn btn-accent btn-dash btn-circle btn-xs absolute right-2 bottom-10 z-20"
+                className="btn btn-dash btn-circle btn-xs absolute right-2 top-2 z-20 bg-base-100"
                 onClick={toggleAreaType}
                 title={`Switch to ${areaType === 'step' ? 'monotone' : 'step'} chart`}
             >
@@ -41,8 +42,8 @@ export default function SWAreaChart({
                 <AreaChart data={data} >
                     <defs>
                         <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="15%" stopColor="var(--color-primary)" stopOpacity={0.3} />
-                            <stop offset="85%" stopColor="var(--color-primary)" stopOpacity={0} />
+                            <stop offset="0%" stopColor="var(--color-primary)" stopOpacity={0.25} />
+                            <stop offset="100%" stopColor="var(--color-primary)" stopOpacity={0} />
                         </linearGradient>
                     </defs>
                     {/* {
@@ -57,9 +58,9 @@ export default function SWAreaChart({
                     } */}
                     <CartesianGrid
                         horizontal={true}
-                        vertical={true}
+                        vertical={false}
                         stroke="var(--color-base-300)"
-                        strokeDasharray="3 3"
+                        strokeDasharray="3"
                         strokeOpacity={1}
                     />
                     {

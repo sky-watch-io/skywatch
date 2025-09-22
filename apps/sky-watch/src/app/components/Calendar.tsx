@@ -6,7 +6,7 @@ import { format as formatDate } from "date-fns";
 export default function Calendar() {
     const initialEnd = new Date();
     const initialStart = new Date(initialEnd);
-    initialStart.setDate(initialEnd.getDate() - 27);
+    initialStart.setDate(initialEnd.getDate() - 13);
     const [range, setRange] = useState<DateRange | undefined>({ from: initialStart, to: initialEnd });
     const [appliedRange, setAppliedRange] = useState<DateRange | undefined>({ from: initialStart, to: initialEnd });
     const popoverRef = useRef<HTMLDivElement>(null);
