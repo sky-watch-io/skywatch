@@ -14,7 +14,7 @@ export async function middleware(request: NextRequest) {
     }
     if (request.nextUrl.pathname === "/") {
         const rows = await db
-            .select({ id: project.id })
+            .select({ id: project.id, slug: project.slug })
             .from(project)
             .leftJoin(projectMembership, eq(projectMembership.projectId, project.id))
             .where(or(eq(projectMembership.userId, session.user.id), eq(project.userId, session.user.id)))
@@ -22,6 +22,8 @@ export async function middleware(request: NextRequest) {
         if (rows.length === 0) {
             return NextResponse.redirect(new URL("/create-project", request.url));
         }
+        const first = rows[0];
+        return NextResponse.redirect(new URL(`/${first.slug ?? first.id}`, request.url));
     }
     return NextResponse.next();
 }

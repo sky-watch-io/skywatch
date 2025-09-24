@@ -38,7 +38,7 @@ export default function SideNav() {
                                 <span className="badge badge-sm badge-secondary">22</span>
                             </a>
                         </li>
-                        <li>
+                        {/* <li>
                             <a>
                                 <span className="icon-[lucide--brain-circuit] size-5"></span>
                                 <div>Insights</div>
@@ -109,7 +109,7 @@ export default function SideNav() {
                                     </li>
                                 </ul>
                             </details>
-                        </li>
+                        </li> */}
                         <div className="divider my-0"></div>
                         <li>
                             <a>

@@ -1,77 +1,45 @@
-export default function ProjectsSideNavItem() {
-    return (
-        <div className="dropdown dropdown-bottom dropdown-center w-full">
-            <div tabIndex={0} role="button" className="w-full flex justify-between items-center px-5 py-3 cursor-pointer hover:bg-base-200/25 text-base-content">
-                <div className="flex gap-3 items-center">
-                    <div className="avatar avatar-placeholder">
-                        <div className="bg-primary text-primary-content w-10 rounded">
-                            <span className="font-medium tracking-wide">SW</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="font-medium">Sky Watch Website</div>
-                        <div className="text-xs">Analytics</div>
-                    </div>
-                </div>
-                <span className="icon-[lucide--chevrons-up-down] size-5 mx-1"></span>
-            </div>
-            <ul
-                tabIndex={0}
-                className="menu dropdown-content w-11/12 p-2 border border-base-300 bg-base-200 rounded-md shadow-sm">
-                <div className="text-sm tracking-wide py-2 px-4 font-medium">Projects (3)</div>
-                <li>
-                    <a className="py-3">
-                        <div className="flex gap-2 items-center">
-                            <div className="avatar avatar-placeholder">
-                                <div className="bg-secondary text-secondary-content w-8 rounded">
-                                    <span className="text-sm font-medium tracking-wide">SW</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className="text-sm font-medium">Sky Watch Website</div>
-                                <div className="text-xs">Analytics</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a className="py-3">
-                        <div className="flex gap-2 items-center">
-                            <div className="avatar avatar-placeholder">
-                                <div className="bg-accent text-accent-content w-8 rounded">
-                                    <span className="text-sm font-medium tracking-wide">SA</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className="text-sm font-medium">Sky Watch Application</div>
-                                <div className="text-xs">Analytics</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a className="py-3">
-                        <div className="flex gap-2 items-center">
-                            <div className="avatar avatar-placeholder">
-                                <div className="bg-primary text-primary-content w-8 rounded">
-                                    <span className="text-sm font-medium tracking-wide">SA</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className="text-sm font-medium">Sky Watch Replayer</div>
-                                <div className="text-xs">Media</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <div className="divider my-0"></div>
-                <li>
-                    <a>
-                        <span className="icon-[lucide--circle-plus] size-5"></span>
-                        <div>Create Project</div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    )
+import { getUserProjects } from "@/app/actions/project"
+import ProjectSideNavList from "@/app/components/ProjectSideNavList.client"
+
+function getInitials(name: string): string {
+    if (!name) return "?";
+    const trimmed = name.trim();
+    if (!trimmed) return "?";
+    // Normalize common separators to spaces
+    const normalized = trimmed.replace(/[._\-]+/g, " ");
+    // Split on spaces, then further split camelCase and digit transitions
+    const rawParts = normalized
+        .split(/\s+/)
+        .flatMap(part => part.replace(/([a-z])([A-Z0-9])/g, "$1 $2").split(/\s+/));
+    // Keep alphanumeric-starting parts
+    const parts = rawParts.filter(p => /[A-Za-z0-9]/.test(p));
+    if (parts.length === 0) return "?";
+    // Helper to get first alphanumeric char of a string
+    const firstAlphaNum = (s: string) => {
+        const m = s.match(/[A-Za-z0-9]/);
+        return m ? m[0] : "";
+    };
+    let initials = "";
+    if (parts.length >= 2) {
+        initials = firstAlphaNum(parts[0]) + firstAlphaNum(parts[1]);
+    } else {
+        // Single word: take first two alphanumeric characters
+        const m = parts[0].match(/[A-Za-z0-9]/g);
+        initials = (m?.[0] ?? "") + (m?.[1] ?? "");
+    }
+    initials = initials || firstAlphaNum(parts[0]) || "?";
+    return initials.toUpperCase();
+}
+
+export default async function ProjectsSideNavItem() {
+    const projects = await getUserProjects()
+    if (projects.length === 0) {
+        return (
+            <a href="/create-project" className="btn btn-ghost justify-start px-3 py-3 m-2">
+                <span className="icon-[lucide--circle-plus] size-5"></span>
+                <div>Create Project</div>
+            </a>
+        )
+    }
+    return <ProjectSideNavList projects={projects} />
 }
