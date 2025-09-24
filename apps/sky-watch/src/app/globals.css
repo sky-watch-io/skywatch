@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes: retro --default, coffee --prefersdark;
 }
 
 @plugin "@iconify/tailwind4";
@@ -46,5 +46,15 @@
 .react-day-picker {
   .rdp-month_caption {
     height: 2.2rem;
+  }
+}
+
+steps {
+  & .step {
+
+    >.step-icon,
+    &:not(:has(.step-icon)):after {
+      place-self: start center;
+    }
   }
 }

@@ -5,7 +5,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { betterAuth } from 'better-auth';
 import { nextCookies } from "better-auth/next-js";
 import { sendWelcomEmail } from '@/app/actions/email';
-import * as schema from "@/schema"
+import * as schema from "@/schema/auth-schema"
 
 const sql = neon(process.env.DATABASE_URL!);
 const db = drizzle({ client: sql });
