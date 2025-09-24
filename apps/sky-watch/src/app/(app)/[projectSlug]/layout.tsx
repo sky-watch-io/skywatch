@@ -1,7 +1,12 @@
 import { getProject } from "@/app/actions/project";
 
-export default async function ProjectLayout({ params, children }: { children: React.ReactNode, params: { projectSlug: string } }) {
-    const { projectSlug } = params;
+interface ProjectLayoutProps {
+    children: React.ReactNode;
+    params: Promise<{ projectSlug: string }>
+}
+
+export default async function ProjectLayout({ children, params }: ProjectLayoutProps) {
+    const { projectSlug } = await params;
     const { hasData, domain } = (await getProject(projectSlug))[0]
     return (
         <div>
