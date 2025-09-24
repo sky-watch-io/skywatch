@@ -29,7 +29,7 @@ function getInitials(name: string): string {
 
 export default function ProjectSideNavList({ projects }: { projects: UserProject[] }) {
     const params = useParams();
-    const currentSlug = (params?.projectId as string) ?? '';
+    const currentSlug = (params?.projectSlug as string) ?? '';
     const selected = projects.find(p => (p.slug ?? p.id) === currentSlug) ?? projects[0];
     return (
         <div className="dropdown dropdown-bottom dropdown-center w-full">

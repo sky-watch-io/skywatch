@@ -67,7 +67,15 @@ export const createProject = async (formData: FormData): Promise<void> => {
     redirect(`/${slug}`);
 }
 
-export type UserProject = { id: string, slug?: string | null, name: string, domain: string | null, owner: { type: 'user' | 'org', name: string } };
+export type UserProject = {
+    id: string,
+    slug?: string | null,
+    name: string,
+    domain: string | null,
+    owner: { type: 'user' | 'org', name: string },
+    hasData?: boolean
+};
+
 export const getUserProjects = async (): Promise<UserProject[]> => {
     const session = await auth.api.getSession({ headers: await headers() });
     if (!session) return [];
@@ -98,6 +106,37 @@ export const getUserProjects = async (): Promise<UserProject[]> => {
                 : { type: 'user' as const, name: r.userOwnerId === session.user.id ? 'You' : (r.userOwnerName ?? 'User') };
             result.push({ id: r.id, slug: r.slug, name: r.name, domain: r.domain, owner });
         }
+    }
+    return result;
+}
+
+export const getProject = async (slug: string): Promise<UserProject[]> => {
+    const session = await auth.api.getSession({ headers: await headers() });
+    if (!session) return [];
+    const rows = await db
+        .select({
+            id: project.id,
+            slug: project.slug,
+            name: project.name,
+            domain: project.domain,
+            hasData: project.hasData,
+            organizationId: project.organizationId,
+            organizationName: organization.name,
+            userOwnerId: project.userId,
+            userOwnerName: authUser.name
+        })
+        .from(project)
+        .leftJoin(projectMembership, eq(projectMembership.projectId, project.id))
+        .leftJoin(organization, eq(organization.id, project.organizationId))
+        .leftJoin(authUser, eq(authUser.id, project.userId))
+        .where(and(eq(projectMembership.userId, session.user.id), eq(project.slug, slug)));
+
+    const result: UserProject[] = [];
+    for (const r of rows) {
+        const owner = r.organizationId
+            ? { type: 'org' as const, name: r.organizationName! }
+            : { type: 'user' as const, name: r.userOwnerId === session.user.id ? 'You' : (r.userOwnerName ?? 'User') };
+        result.push({ id: r.id, slug: r.slug, name: r.name, domain: r.domain, owner, hasData: r.hasData });
     }
     return result;
 }
