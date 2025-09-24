@@ -32,7 +32,7 @@ export default function SWAreaChart({
     return (
         <div className='h-52 lg:h-105 relative'>
             <button
-                className="btn btn-dash btn-circle btn-xs absolute right-2 top-2 z-20 bg-base-100"
+                className="btn btn-dash btn-circle btn-xs absolute -right-2 -top-2 z-20 bg-base-100"
                 onClick={toggleAreaType}
                 title={`Switch to ${areaType === 'step' ? 'monotone' : 'step'} chart`}
             >
@@ -73,6 +73,15 @@ export default function SWAreaChart({
                             />
                         )
                     }
+                    <Area
+                        type={areaType}
+                        dataKey="total"
+                        strokeWidth={1.5}
+                        stroke="var(--color-primary)"
+                        fill="url(#areaGradient)"
+                        isAnimationActive={false}
+                        activeDot={{ fill: "var(--color-accent)" }}
+                    />
                     <XAxis
                         orientation="bottom"
                         xAxisId="bottom"
@@ -87,15 +96,6 @@ export default function SWAreaChart({
                         tickMargin={4}
                         tickSize={4}
                         tickCount={5}
-                    />
-                    <Area
-                        type={areaType}
-                        dataKey="total"
-                        strokeWidth={2}
-                        stroke="var(--color-primary)"
-                        fill="url(#areaGradient)"
-                        isAnimationActive={false}
-                        activeDot={{ fill: "var(--color-accent)" }}
                     />
                     <YAxis
                         yAxisId="left"

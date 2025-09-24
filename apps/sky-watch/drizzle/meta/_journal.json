@@ -15,6 +15,13 @@
       "when": 1758690346565,
       "tag": "0001_new_thor_girl",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1758731938628,
+      "tag": "0002_gray_leader",
+      "breakpoints": true
     }
   ]
 }

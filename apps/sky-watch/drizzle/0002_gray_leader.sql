@@ -1,0 +1,1 @@
+ALTER TABLE "project" ADD COLUMN "has_data" boolean DEFAULT false NOT NULL;

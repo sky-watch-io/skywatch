@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, pgEnum } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, pgEnum, boolean } from "drizzle-orm/pg-core";
 import { user } from "@/schema/auth-schema"; // <-- your Better Auth user table
 
 // --------------------
@@ -53,6 +53,7 @@ export const project = pgTable("project", {
     slug: text("slug").notNull(),
     userId: text("user_id").references(() => user.id, { onDelete: "cascade" }),
     organizationId: text("organization_id").references(() => organization.id, { onDelete: "cascade" }),
+    hasData: boolean("has_data").default(false).notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at")
         .defaultNow()
