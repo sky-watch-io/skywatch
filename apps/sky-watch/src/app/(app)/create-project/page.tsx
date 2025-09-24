@@ -10,7 +10,7 @@ export default function CreateProjectPage() {
     async function SubmitReady({ ownersPromise }: { ownersPromise: ReturnType<typeof getOwners> }) {
         await ownersPromise
         return (
-            <SubmitButton className="btn btn-sm btn-primary mt-3">
+            <SubmitButton className="btn btn-block btn-primary mt-3">
                 Create project
             </SubmitButton>
         )
@@ -54,7 +54,7 @@ export default function CreateProjectPage() {
                     <p className="validator-hint hidden mt-0">Enter valid domain address</p>
                 </PendingFieldset>
                 <div className="flex justify-end">
-                    <Suspense fallback={<button className="btn btn-sm btn-primary mt-3" disabled aria-disabled>
+                    <Suspense fallback={<button className="btn btn-block btn-primary mt-3" disabled aria-disabled>
                         <span className="icon-[lucide--badge-plus] size-4"></span>
                         Create project
                     </button>}>
