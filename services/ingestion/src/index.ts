@@ -4,7 +4,7 @@ import { upgradeWebSocket } from 'hono/cloudflare-workers'
 const app = new Hono<{ Bindings: CloudflareBindings }>()
 
 app.get(
-  '/',
+  '/ws',
   upgradeWebSocket((c) => {
     return {
       async onMessage(event, ws) {
