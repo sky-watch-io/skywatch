@@ -3,6 +3,9 @@
   "name": "ingestion",
   "main": "src/index.ts",
   "compatibility_date": "2025-09-25",
+  "route": "ingestion.sky-watch.io",
+  "workers_dev": false,
+  "preview_urls": false,
   "pipelines": [
     {
       "pipeline": "b0112f9a335346229a2dc847b5b945c1",
