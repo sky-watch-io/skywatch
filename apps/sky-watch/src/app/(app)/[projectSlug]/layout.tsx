@@ -7,7 +7,7 @@ interface ProjectLayoutProps {
 
 export default async function ProjectLayout({ children, params }: ProjectLayoutProps) {
     const { projectSlug } = await params;
-    const { hasData, domain } = (await getProject(projectSlug))[0]
+    const { hasData, id } = (await getProject(projectSlug))[0]
     return (
         <div>
             {hasData ? children : (
@@ -23,7 +23,7 @@ export default async function ProjectLayout({ children, params }: ProjectLayoutP
                     </p>
                     <div className="bg-primary text-primary-content p-4 rounded text-xs">
                         <code>
-                            {`<script src="https://recorder.sky-watch.io" data-domain="${domain}"></script>`}
+                            {`<script src="https://recorder.sky-watch.workers.dev" data-project="${id}"></script>`}
                         </code>
                     </div>
                     <div className="divider"></div>
