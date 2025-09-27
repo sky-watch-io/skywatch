@@ -1,15 +1,30 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "ingestion",
   "main": "src/index.ts",
   "compatibility_date": "2025-09-25",
-  "route": "ingestion.sky-watch.io",
-  "pipelines": [
-    {
-      "pipeline": "b0112f9a335346229a2dc847b5b945c1",
-      "binding": "SKYWATCH_INGESTION_PIPELINE_STREAM"
+  "env": {
+    "dev": {
+      "name": "ingestion-dev",
+      "workers_dev": true,
+      "pipelines": [
+        {
+          "pipeline": "d3ea66cc9d46403aa701b7af5e32d238",
+          "binding": "SKYWATCH_INGESTION_PIPELINE_STREAM"
+        }
+      ],
+    },
+    "production": {
+      "name": "ingestion",
+      "workers_dev": false,
+      "route": "ingestion.sky-watch.io",
+      "pipelines": [
+        {
+          "pipeline": "e32ba5e800af4b28a68f515387c34a6d",
+          "binding": "SKYWATCH_INGESTION_PIPELINE_STREAM"
+        }
+      ],
     }
-  ]
+  }
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],

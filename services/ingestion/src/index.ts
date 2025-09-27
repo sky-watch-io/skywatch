@@ -10,7 +10,7 @@ app.get(
       async onMessage(event, ws) {
         const data = JSON.parse(event.data)
         await c.env.SKYWATCH_INGESTION_PIPELINE_STREAM.send(data);
-        ws.send('Hello from server!')
+        ws.send('New Hello from server!')
       },
       onClose: () => {
         console.log('Connection closed')
