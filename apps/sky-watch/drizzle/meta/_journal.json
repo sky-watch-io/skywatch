@@ -22,6 +22,13 @@
       "when": 1758731938628,
       "tag": "0002_gray_leader",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1759055777805,
+      "tag": "0003_create_trigger_on_project",
+      "breakpoints": true
     }
   ]
 }
