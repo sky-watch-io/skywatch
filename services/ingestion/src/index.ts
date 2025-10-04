@@ -12,7 +12,7 @@ app.post('/', async (c) => {
 
     return c.json({
       success: true,
-      message: 'Data sent to pipeline successfully'
+      message: 'Data ingested into pipeline successfully'
     })
   } catch (error) {
     console.error('Error processing request:', error)
