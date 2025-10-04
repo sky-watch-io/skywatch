@@ -10,7 +10,7 @@ export default async function ProjectLayout({ children, params }: ProjectLayoutP
     const { hasData, id } = (await getProject(projectSlug))[0]
     return (
         <div>
-            {hasData ? children : (
+            {!hasData ? children : (
                 <div className="p-4 space-y-2">
                     <div className="text-xl">
                         Set up tracking for this project
