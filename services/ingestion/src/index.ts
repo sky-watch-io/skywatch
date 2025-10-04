@@ -1,22 +1,26 @@
 import { Hono } from 'hono'
-import { upgradeWebSocket } from 'hono/cloudflare-workers'
 
 const app = new Hono<{ Bindings: CloudflareBindings }>()
 
-app.get(
-  '/',
-  upgradeWebSocket((c) => {
-    return {
-      async onMessage(event, ws) {
-        const data = JSON.parse(event.data)
-        await c.env.SKYWATCH_INGESTION_PIPELINE_STREAM.send(data);
-        ws.send('New Hello from server!')
-      },
-      onClose: () => {
-        console.log('Connection closed')
-      },
-    }
-  })
-)
+app.post('/', async (c) => {
+  try {
+    // Get data from query parameters or request body
+    const data = await c.req.json().catch(() => ({}))
+
+    // Send data to the pipeline stream
+    await c.env.SKYWATCH_INGESTION_PIPELINE_STREAM.send(data)
+
+    return c.json({
+      success: true,
+      message: 'Data sent to pipeline successfully'
+    })
+  } catch (error) {
+    console.error('Error processing request:', error)
+    return c.json({
+      success: false,
+      error: 'Failed to process request'
+    }, 500)
+  }
+})
 
 export default app
