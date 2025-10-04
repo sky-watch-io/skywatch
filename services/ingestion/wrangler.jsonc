@@ -18,7 +18,7 @@
       "routes": [],
       "pipelines": [
         {
-          "pipeline": "d3ea66cc9d46403aa701b7af5e32d238",
+          "pipeline": "a2a6223591664035b956dbb59914a698",
           "binding": "SKYWATCH_INGESTION_PIPELINE_STREAM"
         }
       ],

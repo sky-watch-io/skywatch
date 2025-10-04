@@ -23,10 +23,10 @@ type SWAreaChartType = {
 export default function SWAreaChart({
     data, XTickFormatter, YTickFormatter, TopTooltip, BottomTooltip
 }: SWAreaChartType) {
-    const [areaType, setAreaType] = useState<'step' | 'monotone'>('monotone');
+    const [areaType, setAreaType] = useState<'step' | 'linear'>('linear');
 
     const toggleAreaType = () => {
-        setAreaType(prev => prev === 'step' ? 'monotone' : 'step');
+        setAreaType(prev => prev === 'step' ? 'linear' : 'step');
     };
 
     return (
@@ -34,7 +34,7 @@ export default function SWAreaChart({
             <button
                 className="btn btn-dash btn-circle btn-xs absolute -right-2 -top-2 z-20 bg-base-100"
                 onClick={toggleAreaType}
-                title={`Switch to ${areaType === 'step' ? 'monotone' : 'step'} chart`}
+                title={`Switch to ${areaType === 'step' ? 'linear' : 'step'} chart`}
             >
                 <span className={`size-3.5 ${areaType === 'step' ? 'icon-[carbon--chart-stepper]' : 'icon-[lucide--chart-spline]'}`}></span>
             </button>
@@ -42,7 +42,7 @@ export default function SWAreaChart({
                 <AreaChart data={data} >
                     <defs>
                         <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="var(--color-primary)" stopOpacity={0.25} />
+                            <stop offset="0%" stopColor="var(--color-primary)" stopOpacity={0.5} />
                             <stop offset="100%" stopColor="var(--color-primary)" stopOpacity={0} />
                         </linearGradient>
                     </defs>
